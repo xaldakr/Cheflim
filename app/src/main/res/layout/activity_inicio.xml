@@ -11,7 +11,12 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+        </LinearLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,6 +30,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:src="@drawable/inicio_sel"
+            android:contentDescription="@string/default_content"
             android:background="@drawable/pmenubutton"/>
         <ImageButton
             android:id="@+id/MenuLista"
@@ -33,6 +39,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:src="@drawable/lista_def"
+            android:contentDescription="@string/default_content"
             android:background="@drawable/pmenubutton"/>
         <ImageButton
             android:id="@+id/MenuDescubre"
@@ -41,6 +48,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:src="@drawable/descubre_def"
+            android:contentDescription="@string/default_content"
             android:background="@drawable/pmenubutton"/>
         <ImageButton
             android:id="@+id/MenuPerfil"
@@ -49,6 +57,7 @@
             android:layout_height="100dp"
             android:scaleType="fitCenter"
             android:src="@drawable/perfil_def"
+            android:contentDescription="@string/default_content"
             android:background="@drawable/pmenubutton"/>
 
     </LinearLayout>

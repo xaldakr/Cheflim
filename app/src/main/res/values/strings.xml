@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cheflim</string>
+    <string name="default_content">.</string>
 </resources>
