@@ -18,7 +18,8 @@
             android:layout_height="match_parent"
             android:background="none"
             android:text=" ."
-            android:textAlignment="textStart"/>
+            android:textAlignment="textEnd"
+            android:textColor="@color/red"/>
     </LinearLayout>
 
     <LinearLayout
@@ -26,6 +27,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="4">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,15 +39,75 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/ETCorreoSU"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:textSize="18sp"
+                android:background="@drawable/edittextredondo"
                 android:ems="10"
                 android:inputType="text"
-                android:background="@drawable/edittextredondo"
                 android:text="     Correo"
-                />
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"/>
+            <EditText
+                android:id="@+id/ETNombreSU"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittextredondo"
+                android:ems="10"
+                android:inputType="text"
+                android:text="     Nombre Completo"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:id="@+id/ETUsuarioSU"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittextredondo"
+                android:ems="10"
+                android:inputType="text"
+                android:text="     Nombre de Usuario"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <EditText
+                android:id="@+id/ETContraSU"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/edittextredondo"
+                android:ems="10"
+                android:inputType="text|textPassword"
+                android:hint="     Contraseña"
+                android:textColor="@color/gray"
+                android:textSize="18sp" />
+            <EditText
+                android:id="@+id/ETRepContraSU"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittextredondo"
+                android:ems="10"
+                android:inputType="text|textPassword"
+                android:hint="     Repita su Contraseña"
+                android:textColor="@color/gray"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/red"
+                android:text="Crear Cuenta"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:layout_marginTop="20dp"/>
         </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </LinearLayout>
