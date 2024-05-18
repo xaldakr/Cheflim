@@ -10,20 +10,89 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@color/olive">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/topcontainer">
+            android:background="@drawable/topcontainer"
+            android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="200"
+                        android:orientation="vertical"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="24sp"
+                            android:text="Bienvenido"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:text="Lorem Ipsum"/>
 
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+                        <ImageButton
+                            android:id="@+id/BTAgregar"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:scaleType="fitCenter"
+                            android:padding="0dp"
+                            android:backgroundTint="@color/none"
+                            android:contentDescription="@string/default_content"
+                            android:src="@drawable/add"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/searchbarlay">
+                    <EditText
+                        android:id="@+id/ETSearch"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="60dp"
+                        android:hint="   Buscar Receta"/>
+
+                    <ImageButton
+                        android:id="@+id/BTBuscar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:contentDescription="@string/default_content"
+                        android:src="@android:drawable/ic_menu_search"
+                         android:backgroundTint="@color/none" />
+                </LinearLayout>
         </LinearLayout>
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-        </LinearLayout>
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Hola"/>
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
