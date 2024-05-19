@@ -4,6 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrudRecetas">
+    android:background="@color/olive"
+    tools:context=".Listaingredientes">
 
+    <!-- Header Layout -->
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/back"
+                />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_centerInParent="true">
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crear Receta"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:id="@+id/search_ingredient"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittextredondo"
+                    android:drawablePadding="8dp"
+                    android:padding="10dp"
+                    android:text="Mi Nueva Receta"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/orange_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/orange"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_container">
+
+        <ImageButton
+            android:id="@+id/Misrecetaspd"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/none"
+            android:layout_weight="1"
+            android:contentDescription="@string/default_content"
+            android:padding="0dp"
+            android:src="@drawable/misrecetas"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/Favoritospd"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/none"
+            android:layout_weight="1"
+            android:contentDescription="@string/default_content"
+            android:padding="0dp"
+            android:src="@drawable/favoritos"
+            android:scaleType="fitCenter"/>
+
+        <ImageButton
+            android:id="@+id/Misdatospd"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/red"
+            android:layout_weight="1"
+            android:padding="0dp"
+            android:contentDescription="@string/default_content"
+            android:src="@drawable/misdatos"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ingredients_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/yellow"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orange_layout"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ingredients_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="19dp"
+                android:text="LISTA DE INGREDIENTES"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:paddingRight="130dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/add_ingredient_button"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="end"
+                android:src="@drawable/add" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Descubre">
+    android:background="@color/olive"
+    tools:context=".Listaingredientes">
+
+
+    <LinearLayout
+        android:id="@+id/header_container"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/green"
+        android:orientation="vertical"
+        android:padding="16dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <EditText
+            android:id="@+id/search_ingredient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:background="@drawable/edittextredondo"
+            android:drawableRight="@android:drawable/ic_menu_search"
+            android:drawablePadding="8dp"
+            android:hint="Buscar Ingrediente"
+            android:padding="10dp"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/MenuInicio"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/pmenubutton"
+            android:contentDescription="@string/default_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/inicio_def" />
+
+        <ImageButton
+            android:id="@+id/MenuLista"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/pmenubutton"
+            android:contentDescription="@string/default_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/lista_def" />
+
+        <ImageButton
+            android:id="@+id/MenuDescubre"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/pmenubutton"
+            android:contentDescription="@string/default_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/descubre_def" />
+
+        <ImageButton
+            android:id="@+id/MenuPerfil"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/pmenubutton"
+            android:contentDescription="@string/default_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/perfil_def" />
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
