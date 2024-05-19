@@ -1,9 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PerfilFavoritos">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:background="@color/olive">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/orange">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/topcontainer"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+                    <TextView
+                        android:id="@+id/ETuserpd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="28sp"
+                        android:text="Lorem Ipsum"
+                        android:textColor="@color/white"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp">
+                    <TextView
+                        android:id="@+id/ETnamepd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="Lorem Ipsum Dolem Sit Amet"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/orange">
+                <ImageButton
+                    android:id="@+id/Misrecetaspd"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/none"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/default_content"
+                    android:padding="0dp"
+                    android:src="@drawable/misrecetas"
+                    android:scaleType="fitCenter"/>
+                <ImageButton
+                    android:id="@+id/Favoritospd"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/red"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/default_content"
+                    android:padding="0dp"
+                    android:src="@drawable/favoritos"
+                    android:scaleType="fitCenter"/>
+                <ImageButton
+                    android:id="@+id/Misdatospd"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:backgroundTint="@color/none"
+                    android:layout_weight="1"
+                    android:padding="0dp"
+                    android:contentDescription="@string/default_content"
+                    android:src="@drawable/misdatos"
+                    android:scaleType="fitCenter"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/searchbarlay">
+                    <EditText
+                        android:id="@+id/ETSearch"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="50dp"
+                        android:hint="   Buscar Receta"/>
+
+                    <ImageButton
+                        android:id="@+id/BTBuscar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:contentDescription="@string/default_content"
+                        android:src="@android:drawable/ic_menu_search"
+                        android:backgroundTint="@color/none" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/MenuInicio"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/inicio_def"
+            android:contentDescription="@string/default_content"
+            android:background="@drawable/pmenubutton"/>
+        <ImageButton
+            android:id="@+id/MenuLista"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/lista_def"
+            android:contentDescription="@string/default_content"
+            android:background="@drawable/pmenubutton"/>
+        <ImageButton
+            android:id="@+id/MenuDescubre"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/descubre_def"
+            android:contentDescription="@string/default_content"
+            android:background="@drawable/pmenubutton"/>
+        <ImageButton
+            android:id="@+id/MenuPerfil"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/perfil_sel"
+            android:contentDescription="@string/default_content"
+            android:background="@drawable/pmenubutton"/>
+
+    </LinearLayout>
+</LinearLayout>
