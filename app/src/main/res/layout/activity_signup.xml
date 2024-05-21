@@ -14,12 +14,14 @@
         android:orientation="horizontal"
         android:layout_weight="13">
         <Button
+            android:id="@+id/BTRegresarLog"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/none"
-            android:text=" ."
+            android:text="@string/default_content"
             android:textAlignment="textEnd"
-            android:textColor="@color/red"/>
+            android:textColor="@color/red"
+            android:onClick="Regresar"/>
     </LinearLayout>
 
     <LinearLayout
@@ -29,7 +31,7 @@
         android:layout_weight="4">
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
 
         <LinearLayout
@@ -45,7 +47,7 @@
                 android:background="@drawable/edittextredondo"
                 android:ems="10"
                 android:inputType="text"
-                android:text="     Correo"
+                android:hint="     Correo"
                 android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:layout_marginBottom="20dp"
@@ -57,7 +59,7 @@
                 android:background="@drawable/edittextredondo"
                 android:ems="10"
                 android:inputType="text"
-                android:text="     Nombre Completo"
+                android:hint="     Nombre Completo"
                 android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:layout_marginBottom="20dp"
@@ -69,7 +71,7 @@
                 android:background="@drawable/edittextredondo"
                 android:ems="10"
                 android:inputType="text"
-                android:text="     Nombre de Usuario"
+                android:hint="     Nombre de Usuario"
                 android:textColor="@color/gray"
                 android:textSize="18sp"
                 android:layout_marginBottom="20dp"
@@ -100,13 +102,16 @@
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="20dp"/>
             <Button
+                android:id="@+id/SignBT"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/red"
                 android:text="Crear Cuenta"
                 android:textColor="@color/white"
                 android:textSize="22sp"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="100dp"
+                android:onClick="IniciarSign"/>
         </LinearLayout>
         </ScrollView>
     </LinearLayout>
