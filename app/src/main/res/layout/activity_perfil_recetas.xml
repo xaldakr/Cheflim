@@ -100,26 +100,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:background="@drawable/searchbarlay">
-                        <EditText
-                            android:id="@+id/ETSearch"
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="50dp"
-                            android:hint="   Buscar Receta"/>
 
-                        <ImageButton
-                            android:id="@+id/BTBuscar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="50dp"
-                            android:contentDescription="@string/default_content"
-                            android:src="@android:drawable/ic_menu_search"
-                            android:backgroundTint="@color/none" />
-                    </LinearLayout>
                 </LinearLayout>
             </ScrollView>
             <ImageButton

@@ -10,6 +10,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PATCH;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 
 public interface ApiService {
@@ -33,6 +34,9 @@ public interface ApiService {
     //API RECETAS
     @GET("receta")
     Call<List<Recetas>> getRecetas();
+
+    @GET("receta")
+    Call<List<Recetas>> getRecetas(@Query("nombre") String nombre);
 
     @GET("recetadetalle/{userId}/{recetaId}")
     Call<List<Recetas>> getRecetas(@Path("userId") int userId, @Path("recetaId")int recetaId);

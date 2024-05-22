@@ -1,49 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/olive"
-    tools:context=".Listaingredientes">
-
+    android:orientation="vertical"
+    tools:context=".Descubre">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <LinearLayout
         android:id="@+id/header_container"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/green"
         android:orientation="vertical"
         android:padding="16dp"
 
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        >
 
 
-
-        <EditText
-            android:id="@+id/search_ingredient"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:background="@drawable/edittextredondo"
-            android:drawableRight="@android:drawable/ic_menu_search"
-            android:drawablePadding="8dp"
-            android:hint="Buscar Ingrediente"
-            android:padding="10dp"
-            android:textColor="@color/black" />
+            android:orientation="horizontal"
+            android:background="@drawable/searchbarlay">
+            <EditText
+                android:id="@+id/ETSearchRecipe"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:textColor="@color/black"
+                android:hint="   Buscar Receta"/>
+
+            <ImageButton
+                android:id="@+id/BTBuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:contentDescription="@string/default_content"
+                android:src="@android:drawable/ic_menu_search"
+                android:backgroundTint="@color/none"
+                android:onClick="BuscarReceta"/>
+        </LinearLayout>
     </LinearLayout>
 
-
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/discover_layout_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/MenuInicio"
@@ -53,7 +75,8 @@
             android:background="@drawable/pmenubutton"
             android:contentDescription="@string/default_content"
             android:scaleType="fitCenter"
-            android:src="@drawable/inicio_def" />
+            android:src="@drawable/inicio_def"
+            android:onClick="IngresarIniciodelDescubre"/>
 
         <ImageButton
             android:id="@+id/MenuLista"
@@ -63,7 +86,7 @@
             android:background="@drawable/pmenubutton"
             android:contentDescription="@string/default_content"
             android:scaleType="fitCenter"
-            android:src="@drawable/lista_def" />
+            android:src="@drawable/lista_def" android:onClick="IngresarListadelDescubre"/>
 
         <ImageButton
             android:id="@+id/MenuDescubre"
@@ -73,7 +96,7 @@
             android:background="@drawable/pmenubutton"
             android:contentDescription="@string/default_content"
             android:scaleType="fitCenter"
-            android:src="@drawable/descubre_def" />
+            android:src="@drawable/descubre_sel" />
 
         <ImageButton
             android:id="@+id/MenuPerfil"
@@ -83,10 +106,11 @@
             android:background="@drawable/pmenubutton"
             android:contentDescription="@string/default_content"
             android:scaleType="fitCenter"
-            android:src="@drawable/perfil_def" />
+            android:src="@drawable/perfil_def"
+            android:onClick="IngresarPerfildelDescubre"/>
 
     </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 

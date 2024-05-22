@@ -113,4 +113,24 @@ public class Inicio extends AppCompatActivity {
         }
     }
 
+    public void IngresarListadelInicio(View view) {
+        Intent intento = new Intent(this, Listaingredientes.class);
+        startActivity(intento);
+        finish();
+    }
+    public void IngresarIniciodelInicio(View view) {
+        Intent intento = new Intent(this, Inicio.class);
+        startActivity(intento);
+        finish();
+    }
+    public void IngresarPerfildelInicio(View view) {
+        Intent intento = new Intent(this, PerfilDatos.class);
+        startActivity(intento);
+        finish();
+    }
+    public void IngresarDescubredelInicio(View view) {
+        Intent intento = new Intent(this, Descubre.class);
+        startActivity(intento);
+        finish();
+    }
 }

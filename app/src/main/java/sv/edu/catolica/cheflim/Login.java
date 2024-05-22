@@ -38,6 +38,7 @@ public class Login extends AppCompatActivity {
         editor.putInt("id_usuario", -1);
         editor.putString("usuario", "");
         editor.putString("nombre", "");
+        editor.putString("correo", "");
         editor.apply();
         Log = (Button) findViewById(R.id.loginButton);
         Sign = (Button) findViewById(R.id.gotosign);

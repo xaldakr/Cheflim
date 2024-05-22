@@ -99,7 +99,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/lista_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarListadelInicio"/>
         <ImageButton
             android:id="@+id/MenuDescubre"
             android:layout_width="0dp"
@@ -108,7 +109,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/descubre_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarDescubredelInicio"/>
         <ImageButton
             android:id="@+id/MenuPerfil"
             android:layout_width="0dp"
@@ -117,7 +119,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/perfil_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarPerfildelInicio"/>
 
     </LinearLayout>
 </LinearLayout>
