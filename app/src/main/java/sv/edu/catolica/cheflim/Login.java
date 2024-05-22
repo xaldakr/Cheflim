@@ -84,6 +84,7 @@ public class Login extends AppCompatActivity {
                         Toast.makeText(Login.this, "Bienvenido " + usuario, Toast.LENGTH_SHORT).show();
                         Intent intentomain = new Intent(Login.this, Inicio.class);
                         startActivity(intentomain);
+                        finish();
                     } else {
                         Toast.makeText(Login.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
                         Sign.setEnabled(true);

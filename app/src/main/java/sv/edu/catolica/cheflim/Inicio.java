@@ -105,6 +105,8 @@ public class Inicio extends AppCompatActivity {
     private void MostrarReceta(int id_receta, int id_usuario){
         if (id_usuario >= 1){
             Intent intentocosa = new Intent(Inicio.this, Vistareceta.class);
+            intentocosa.putExtra("id_receta", id_receta);
+            intentocosa.putExtra("id_usuario", id_usuario);
             startActivity(intentocosa);
         } else {
             Toast.makeText(Inicio.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
