@@ -32,13 +32,13 @@ public class Inicio extends AppCompatActivity {
     private TextView datouser;
     private ImageView img;
 
-    SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-
+        SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
         // Aqui comprobariamos si existe el usuario
         if (sharedPreferences.getInt("id_usuario", -1) == -1){
             finish();
@@ -47,7 +47,7 @@ public class Inicio extends AppCompatActivity {
 
         datouser = (TextView) findViewById(R.id.InicioNameuser);
 
-        datouser.setText(sharedPreferences.getString("clave_usuario", ""));
+        datouser.setText(sharedPreferences.getString("usuario", ""));
         ApiService apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
         Call<List<Recetas>> call = apiService.getRecetas();
         call.enqueue(new Callback<List<Recetas>>() {
@@ -71,7 +71,7 @@ public class Inicio extends AppCompatActivity {
     }
     private void mostrarRecetas(List<Recetas> recetas, ApiService apiService) {
         LayoutInflater inflater = LayoutInflater.from(this);
-
+        SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
         for (Recetas receta : recetas) {
             View cardView = inflater.inflate(R.layout.card_item, li, false);
 
@@ -81,7 +81,7 @@ public class Inicio extends AppCompatActivity {
             descriptionTex = cardView.findViewById(R.id.description_text);
             ratingTex = cardView.findViewById(R.id.rating_text);
 
-            ImageButton botorecipe = (ImageButton) findViewById(R.id.see_recipe);
+            ImageButton botorecipe = (ImageButton) cardView.findViewById(R.id.see_recipe);
 
             String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/"+ receta.getImg();
 
