@@ -1,223 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Vistareceta">
 
-    <!-- Contenedor superior con fondo verde -->
-    <RelativeLayout
-        android:id="@+id/greenContainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#A3D86D"
-        android:padding="16dp">
-
-        <!-- Header Section -->
-        <RelativeLayout
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="16dp">
-
-            <!-- Back Button -->
-            <ImageButton
-                android:id="@+id/backButton"
-                android:layout_width="28dp"
-                android:layout_height="38dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:backgroundTint="@color/none"
-                android:contentDescription="@string/default_content"
-                android:onClick="Regresar"
-                android:src="@drawable/back"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <!-- Title -->
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="8dp"
-                android:text="Lorem"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <!-- Bookmark Icon -->
-            <ImageView
-                android:id="@+id/bookmarkIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/bookmark" />
-        </RelativeLayout>
-
-        <!-- Image Section -->
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_below="@id/header"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/images"/>
-
-        <!-- Rating Section -->
-        <LinearLayout
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/image"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-
-            <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/star"
-                android:backgroundTint="@color/none"
-                android:contentDescription="@string/default_content"
-                android:scaleType="fitXY"
-                android:padding="0dp"/>
-            <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/star"
-                android:backgroundTint="@color/none"
-                android:contentDescription="@string/default_content"
-                android:scaleType="fitXY"
-                android:padding="0dp"/>
-            <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/star"
-                android:backgroundTint="@color/none"
-                android:contentDescription="@string/default_content"
-                android:scaleType="fitXY"
-                android:padding="0dp"/>
-            <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/star"
-                android:backgroundTint="@color/none"
-                android:contentDescription="@string/default_content"
-                android:scaleType="fitXY"
-                android:padding="0dp"/>
-            <ImageButton
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/star"
-                android:backgroundTint="@color/none"
-                android:contentDescription="@string/default_content"
-                android:scaleType="fitXY"
-                android:padding="0dp"/>
-        </LinearLayout>
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/whiteContainer"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/greenContainer"
-        android:background="@color/olive"
-        android:padding="16dp">
+        android:fillViewport="true">
 
-        <!-- Portions and Time Section -->
-        <LinearLayout
-            android:id="@+id/details"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:layout_height="wrap_content">
 
-            <!-- Portions -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/portions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0 porciones"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ingredientes"
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <!-- Time -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0 minutos"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:textColor="#000000"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <!-- Button -->
-            <Button
-                android:id="@+id/addToListButton"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:backgroundTint="#DC3254"
-                android:text="Agregar a la lista"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-
-        <!-- Instructions Section -->
-        <LinearLayout
-            android:id="@+id/instructions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/details"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <TextView
+            <RelativeLayout
+                android:id="@+id/greenContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Instrucciones:"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </RelativeLayout>
+                android:paddingBottom="5dp"
+                android:background="@color/olive">
 
+                <!-- Botón de regreso -->
+                <ImageButton
+                    android:id="@+id/backButton"
+                    android:layout_width="35dp"
+                    android:layout_height="49dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/back"
+                    android:onClick="Regresar"
+                    tools:ignore="ContentDescription" />
+
+                <!-- Título del platillo -->
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <!-- Descripción del autor justo debajo del título -->
+                <TextView
+                    android:id="@+id/authorDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"/>
+
+                <!-- Icono de bookmark -->
+                <ImageView
+                    android:id="@+id/bookmarkIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/bookmark"/>
+
+                <!-- Imagen del platillo -->
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_below="@id/authorDescription"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/imgc" />
+
+                <!-- Sección de calificación con estrellas -->
+                <LinearLayout
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    <!-- Repetir el siguiente ImageButton para cada estrella según sea necesario -->
+                    <ImageButton
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/star"
+                        android:backgroundTint="@color/none"
+                        android:contentDescription="@string/default_content"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <ImageButton
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/star"
+                        android:backgroundTint="@color/none"
+                        android:contentDescription="@string/default_content"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <ImageButton
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/star"
+                        android:backgroundTint="@color/none"
+                        android:contentDescription="@string/default_content"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <ImageButton
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/star"
+                        android:backgroundTint="@color/none"
+                        android:contentDescription="@string/default_content"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        tools:ignore="TouchTargetSizeCheck" />
+                    <ImageButton
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/star"
+                        android:backgroundTint="@color/none"
+                        android:contentDescription="@string/default_content"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/greenContainer"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/portions"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" porciones"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="mins"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="16dp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/addToListButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="#4CAF50"
+                        android:text="Agregar a la lista"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/ingredientsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Ingredientes"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/ingredientsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+                        <!-- Ingredients dynamically added here -->
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/instructionsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Instrucciones:"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/pasosContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
