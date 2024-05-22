@@ -94,8 +94,9 @@
             android:layout_height="match_parent">
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
                 <LinearLayout
+                    android:id="@+id/layoutmyrecipes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -130,7 +131,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/inicio_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarIniciodelPerReceta"/>
         <ImageButton
             android:id="@+id/MenuLista"
             android:layout_width="0dp"
@@ -139,7 +141,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/lista_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarListadelPerReceta"/>
         <ImageButton
             android:id="@+id/MenuDescubre"
             android:layout_width="0dp"
@@ -148,7 +151,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/descubre_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarDescubredelPerReceta"/>
         <ImageButton
             android:id="@+id/MenuPerfil"
             android:layout_width="0dp"
