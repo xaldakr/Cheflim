@@ -34,13 +34,15 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/white"
                             android:textSize="24sp"
-                            android:text="Bienvenido"/>
+                            android:text="Bienvenid@"/>
                         <TextView
+                            android:id="@+id/InicioNameuser"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/white"
                             android:textSize="18sp"
                             android:text="Lorem Ipsum"/>
+
 
                     </LinearLayout>
                     <LinearLayout
@@ -59,26 +61,7 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/searchbarlay">
-                    <EditText
-                        android:id="@+id/ETSearch"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="60dp"
-                        android:hint="   Buscar Receta"/>
 
-                    <ImageButton
-                        android:id="@+id/BTBuscar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="60dp"
-                        android:contentDescription="@string/default_content"
-                        android:src="@android:drawable/ic_menu_search"
-                         android:backgroundTint="@color/none" />
-                </LinearLayout>
         </LinearLayout>
         <ScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"

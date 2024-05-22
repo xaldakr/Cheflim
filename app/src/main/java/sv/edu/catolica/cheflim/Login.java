@@ -3,6 +3,7 @@ package sv.edu.catolica.cheflim;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,7 @@ public class Login extends AppCompatActivity {
     private Button Log, Sign;
     private EditText Mail, Pass;
     private String txtcorreo, txtcontra;
+    SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,14 @@ public class Login extends AppCompatActivity {
 
         apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
 
+        //Aqui se va a interrogar si ya hay una sesion activa
+
+        //Aqui se setean a null los datos de login
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("id_usuario", -1);
+        editor.putString("usuario", "");
+        editor.putString("nombre", "");
+        editor.apply();
         Log = (Button) findViewById(R.id.loginButton);
         Sign = (Button) findViewById(R.id.gotosign);
         Mail = (EditText) findViewById(R.id.emailEditText);
@@ -59,8 +69,14 @@ public class Login extends AppCompatActivity {
                     Map<String, Object> responseBody = response.body();
                     if(response.isSuccessful()){
                          String usuario = (String) responseBody.get("usuario");
+                         String nome = (String) responseBody.get("nombre");
                         //Aqui obtener los datos de login
-
+                        int idusu = (int) responseBody.get("id_usuario");
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("id_usuario", idusu);
+                        editor.putString("usuario", usuario);
+                        editor.putString("nombre", nome);
+                        editor.apply();
                         Sign.setEnabled(true);
                         Log.setEnabled(true);
                         Toast.makeText(Login.this, "Bienvenido " + usuario, Toast.LENGTH_SHORT).show();

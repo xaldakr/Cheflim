@@ -2,13 +2,18 @@ package sv.edu.catolica.cheflim;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -23,15 +28,26 @@ public class Inicio extends AppCompatActivity {
 
     private LinearLayout li;
     private TextView titleTex, authorTex, descriptionTex,ratingTex;
+
+    private TextView datouser;
     private ImageView img;
+
+    SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
 
+        // Aqui comprobariamos si existe el usuario
+        if (sharedPreferences.getInt("id_usuario", -1) == -1){
+            finish();
+        }
         li = findViewById(R.id.linear_layout_container);
 
+        datouser = (TextView) findViewById(R.id.InicioNameuser);
+
+        datouser.setText(sharedPreferences.getString("clave_usuario", ""));
         ApiService apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
         Call<List<Recetas>> call = apiService.getRecetas();
         call.enqueue(new Callback<List<Recetas>>() {
@@ -65,6 +81,8 @@ public class Inicio extends AppCompatActivity {
             descriptionTex = cardView.findViewById(R.id.description_text);
             ratingTex = cardView.findViewById(R.id.rating_text);
 
+            ImageButton botorecipe = (ImageButton) findViewById(R.id.see_recipe);
+
             String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/"+ receta.getImg();
 
             Glide.with(getApplication()).load(URL_IMG).into(img);
@@ -73,10 +91,24 @@ public class Inicio extends AppCompatActivity {
             descriptionTex.setText("Recetas fáciles para hacer en casa");
             ratingTex.setText(String.format("%.1f (%d Reseñas)", receta.getPromedioResenas(), receta.getCantidadResenas()));
 
+            botorecipe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MostrarReceta(receta.getId_receta(), sharedPreferences.getInt("id_usuario", -1)); //Quitar el hardcoded
+                }
+            });
+
             li.addView(cardView);
         }
     }
 
-
+    private void MostrarReceta(int id_receta, int id_usuario){
+        if (id_usuario >= 1){
+            Intent intentocosa = new Intent(Inicio.this, Vistareceta.class);
+            startActivity(intentocosa);
+        } else {
+            Toast.makeText(Inicio.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
+        }
+    }
 
 }

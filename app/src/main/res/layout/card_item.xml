@@ -7,70 +7,86 @@
     android:layout_marginBottom="16dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp">
-
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:layout_height="wrap_content">
 
-        <!-- ImageView for the image -->
-        <ImageView
-            android:id="@+id/image_view"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/images"
-            android:scaleType="centerCrop"
-            android:contentDescription="Tacos al pastor" />
-
-        <!-- LinearLayout for the text -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:padding="16dp">
 
-            <TextView
-                android:id="@+id/title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tacos al pastor"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+            <!-- ImageView for the image -->
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/images"
+                android:scaleType="centerCrop"
+                android:contentDescription="Tacos al pastor" />
 
-            <TextView
-                android:id="@+id/author_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="de Marco Antonio Perejil" />
-
-            <TextView
-                android:id="@+id/description_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Recetas fáciles para hacer en casa" />
-
-            <!-- Rating section -->
+            <!-- LinearLayout for the text -->
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp">
-
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="17dp"
-                    android:src="@drawable/star_selected"
-                    android:contentDescription="Star" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/rating_text"
+                    android:id="@+id/title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4.9 (39 Reseñas)"
-                    android:layout_marginStart="4dp" />
+                    android:text="Tacos al pastor"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/author_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="de Marco Antonio Perejil" />
+
+                <TextView
+                    android:id="@+id/description_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recetas fáciles para hacer en casa" />
+
+                <!-- Rating section -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/star_selected"
+                        android:contentDescription="Star" />
+
+                    <TextView
+                        android:id="@+id/rating_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.9 (39 Reseñas)"
+                        android:layout_marginStart="4dp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/see_recipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_view"
+            android:backgroundTint="@color/none"
+            android:paddingStart="50dp"
+            android:paddingEnd="15dp"
+            android:paddingTop="25dp"
+            android:layout_gravity="bottom|end"
+            android:contentDescription="@string/default_content"
+            android:textColor="@color/none"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.cardview.widget.CardView>
