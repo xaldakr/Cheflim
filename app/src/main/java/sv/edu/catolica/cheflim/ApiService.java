@@ -41,6 +41,9 @@ public interface ApiService {
     @GET("recetadetalle/{userId}/{recetaId}")
     Call<Recetas> getRecetas(@Path("userId") int userId, @Path("recetaId")int recetaId);
 
+    @GET("recetauser/{id}")
+    Call<List<Recetas>> getUserRecetas(@Path("id") int id);
+
     //API IMAGENES
 
 

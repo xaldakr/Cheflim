@@ -37,6 +37,11 @@ public class Descubre extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descubre);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
+        // Aqui comprobariamos si existe el usuario
+        if (sharedPreferences.getInt("id_usuario", -1) == -1){
+            finish();
+        }
         textbusqueda = "";
         datobusqueda = (EditText) findViewById(R.id.ETSearchRecipe);
         li = findViewById(R.id.discover_layout_container);
