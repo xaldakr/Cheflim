@@ -86,7 +86,8 @@
             android:background="@drawable/pmenubutton"
             android:contentDescription="@string/default_content"
             android:scaleType="fitCenter"
-            android:src="@drawable/lista_def" android:onClick="IngresarListadelDescubre"/>
+            android:src="@drawable/lista_def"
+            android:onClick="IngresarListadelDescubre"/>
 
         <ImageButton
             android:id="@+id/MenuDescubre"
