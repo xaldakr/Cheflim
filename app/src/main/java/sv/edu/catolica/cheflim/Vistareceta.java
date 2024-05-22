@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class Vistareceta extends AppCompatActivity {
 
@@ -20,5 +21,8 @@ public class Vistareceta extends AppCompatActivity {
         if (id_receta == -1 || id_usuario == -1){
             finish();
         }
+    }
+    public void Regresar(View view) {
+        finish();
     }
 }

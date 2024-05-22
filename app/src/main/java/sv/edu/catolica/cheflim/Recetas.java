@@ -17,6 +17,7 @@ public class Recetas {
     private List<Ingrediente> Ingredientes;
     private Usuario Usuarios;
     private List<Resena> Resena;
+    private List<Pasos> Pasos;
     private double promedioResenas;
     private int cantidadResenas;
 
@@ -115,5 +116,13 @@ public class Recetas {
 
     public void setCantidadResenas(int cantidadResenas) {
         this.cantidadResenas = cantidadResenas;
+    }
+
+    public List<sv.edu.catolica.cheflim.Pasos> getPasos() {
+        return Pasos;
+    }
+
+    public void setPasos(List<sv.edu.catolica.cheflim.Pasos> pasos) {
+        Pasos = pasos;
     }
 }
