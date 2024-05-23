@@ -72,6 +72,7 @@ public class Login extends AppCompatActivity {
                     if(response.isSuccessful()){
                          String usuario = (String) responseBody.get("usuario");
                          String nome = (String) responseBody.get("nombre");
+                         String correo = (String) responseBody.get("correo");
                         //Aqui obtener los datos de login
                         int idusu = (int) ((double) responseBody.get("id_usuario"));
                         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
@@ -79,6 +80,7 @@ public class Login extends AppCompatActivity {
                         editor.putInt("id_usuario", idusu);
                         editor.putString("usuario", usuario);
                         editor.putString("nombre", nome);
+                        editor.putString("correo", correo);
                         editor.apply();
                         Sign.setEnabled(true);
                         Log.setEnabled(true);

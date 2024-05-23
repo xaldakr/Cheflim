@@ -50,6 +50,10 @@ public interface ApiService {
     @POST("resena")
     Call<Map<String, Object>> createresena(@Body Map<String, Object> request);
 
+    @GET("recetauser/{id}")
+    Call<List<Recetas>> getUserRecetas(@Path("id") int id);
+
+    //API IMAGENES
 
 
 }
