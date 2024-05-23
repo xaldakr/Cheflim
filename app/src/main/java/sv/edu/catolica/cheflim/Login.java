@@ -37,17 +37,18 @@ public class Login extends AppCompatActivity {
             finish();
         }
         //Aqui se setean a null los datos de login
+        Toast.makeText(this, Integer.toString(sharedPreferences.getInt("id_usuario", -2)), Toast.LENGTH_SHORT).show();
 
+        Log = (Button) findViewById(R.id.loginButton);
+        Sign = (Button) findViewById(R.id.gotosign);
+        Mail = (EditText) findViewById(R.id.emailEditText);
+        Pass = (EditText) findViewById(R.id.passwordEditText);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("id_usuario", -1);
         editor.putString("usuario", "");
         editor.putString("nombre", "");
         editor.putString("correo", "");
         editor.apply();
-        Log = (Button) findViewById(R.id.loginButton);
-        Sign = (Button) findViewById(R.id.gotosign);
-        Mail = (EditText) findViewById(R.id.emailEditText);
-        Pass = (EditText) findViewById(R.id.passwordEditText);
     }
 
     public void Crearcue(View view) {
