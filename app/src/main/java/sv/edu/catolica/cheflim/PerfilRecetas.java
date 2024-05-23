@@ -83,6 +83,7 @@ public class PerfilRecetas extends AppCompatActivity {
             ratingTex = cardView.findViewById(R.id.rating_text);
 
             ImageButton botorecipe = (ImageButton) cardView.findViewById(R.id.see_recipe);
+            ImageButton delerecipe = (ImageButton) cardView.findViewById(R.id.delete_recipe);
 
             String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/"+ receta.getImg();
 
@@ -98,6 +99,12 @@ public class PerfilRecetas extends AppCompatActivity {
                 }
             });
 
+            delerecipe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DeleteReceta(receta.getId_receta());
+                }
+            });
             li.addView(cardView);
         }
     }
@@ -113,6 +120,9 @@ public class PerfilRecetas extends AppCompatActivity {
         }
     }
 
+    private void DeleteReceta(int idReceta){
+
+    }
     public void IngresarListadelPerReceta(View view) {
         Intent intento = new Intent(this, Listaingredientes.class);
         startActivity(intento);

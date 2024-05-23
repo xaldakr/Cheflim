@@ -6,6 +6,7 @@ import java.util.Map;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PATCH;
@@ -53,6 +54,9 @@ public interface ApiService {
     @GET("recetauser/{id}")
     Call<List<Recetas>> getUserRecetas(@Path("id") int id);
 
+    @GET("recetafav/{id}")
+    Call<List<Recetas>> getFavRecetas(@Path("id") int id);
+
     @GET("obtenerlista/{id}")
     Call<Lista> checkList(@Path("id") int idReceta);
 
@@ -60,6 +64,9 @@ public interface ApiService {
     Call<Map<String, Object>> anadirlista(@Body Map<String, Object> request);
 
     //API IMAGENES
-
+    @DELETE("deletereceta/:id")
+    Call<Map<String,Object>> eliminarreceta(@Path("id") int id);
+    @DELETE("borrarArchivo/{idReceta}")
+    Call<Map<String, Object>> eliminarfile(@Path("idReceta") int id);
 
 }
