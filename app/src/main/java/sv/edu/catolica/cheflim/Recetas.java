@@ -21,6 +21,8 @@ public class Recetas {
     private double promedioResenas;
     private int cantidadResenas;
 
+    private int userResena;
+
     // Getters y setters generados
     public int getId_receta() {
         return id_receta;
@@ -124,5 +126,13 @@ public class Recetas {
 
     public void setPasos(List<sv.edu.catolica.cheflim.Pasos> pasos) {
         Pasos = pasos;
+    }
+
+    public int getUserResena() {
+        return userResena;
+    }
+
+    public void setUserResena(int userResena) {
+        this.userResena = userResena;
     }
 }

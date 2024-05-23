@@ -41,7 +41,15 @@ public interface ApiService {
     @GET("recetadetalle/{userId}/{recetaId}")
     Call<Recetas> getRecetas(@Path("userId") int userId, @Path("recetaId")int recetaId);
 
-    //API IMAGENES
+    @GET("obtenerfavid/{id}/{iduser}")
+    Call<FavoritoResponse> checkFavorito(@Path("id") int idReceta, @Path("iduser") int idUsuario);
+
+    @POST("addfav")
+    Call<Map<String, Object>> createFav(@Body Map<String, Object> request);
+
+    @POST("resena")
+    Call<Map<String, Object>> createresena(@Body Map<String, Object> request);
+
 
 
 }

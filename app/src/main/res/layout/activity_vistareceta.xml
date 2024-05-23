@@ -31,9 +31,9 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:background="@android:color/transparent"
-                    android:src="@drawable/back"
                     android:onClick="Regresar"
-                    tools:ignore="ContentDescription" />
+                    android:src="@drawable/back"
+                    tools:ignore="ContentDescription,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <!-- Título del platillo -->
                 <TextView
@@ -60,14 +60,18 @@
                     android:textSize="16sp"/>
 
                 <!-- Icono de bookmark -->
-                <ImageView
+                <ImageButton
                     android:id="@+id/bookmarkIcon"
-                    android:layout_width="30dp"
-                    android:layout_height="35dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginTop="8dp"
-                    android:src="@drawable/bookmark"/>
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="estadoFavorito"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bookmark"
+                    tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                 <!-- Imagen del platillo -->
                 <ImageView
@@ -90,6 +94,7 @@
                     android:orientation="horizontal">
                     <!-- Repetir el siguiente ImageButton para cada estrella según sea necesario -->
                     <ImageButton
+                        android:id="@+id/staruno"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/star"
@@ -97,8 +102,10 @@
                         android:contentDescription="@string/default_content"
                         android:padding="0dp"
                         android:scaleType="fitXY"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:onClick="primervalor"/>
                     <ImageButton
+                        android:id="@+id/stardos"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/star"
@@ -106,8 +113,10 @@
                         android:contentDescription="@string/default_content"
                         android:padding="0dp"
                         android:scaleType="fitXY"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:onClick="segundovalor"/>
                     <ImageButton
+                        android:id="@+id/startres"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/star"
@@ -115,8 +124,10 @@
                         android:contentDescription="@string/default_content"
                         android:padding="0dp"
                         android:scaleType="fitXY"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:onClick="tercervalor"/>
                     <ImageButton
+                        android:id="@+id/starcuatro"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/star"
@@ -124,8 +135,10 @@
                         android:contentDescription="@string/default_content"
                         android:padding="0dp"
                         android:scaleType="fitXY"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:onClick="cuartovalor"/>
                     <ImageButton
+                        android:id="@+id/starcinco"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/star"
@@ -133,7 +146,8 @@
                         android:contentDescription="@string/default_content"
                         android:padding="0dp"
                         android:scaleType="fitXY"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="TouchTargetSizeCheck"
+                        android:onClick="quitovalor"/>
                 </LinearLayout>
             </RelativeLayout>
 
@@ -216,6 +230,7 @@
                         android:text="Instrucciones:"
                         android:textSize="16sp"
                         android:textStyle="bold" />
+                    
 
                     <LinearLayout
                         android:id="@+id/pasosContainer"
