@@ -53,6 +53,12 @@ public interface ApiService {
     @GET("recetauser/{id}")
     Call<List<Recetas>> getUserRecetas(@Path("id") int id);
 
+    @GET("obtenerlista/{id}")
+    Call<Lista> checkList(@Path("id") int idReceta);
+
+    @POST("anadirlista")
+    Call<Map<String, Object>> anadirlista(@Body Map<String, Object> request);
+
     //API IMAGENES
 
 

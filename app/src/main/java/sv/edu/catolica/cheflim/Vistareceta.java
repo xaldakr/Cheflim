@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -33,6 +34,7 @@ public class Vistareceta extends AppCompatActivity {
     private int id_usuario = -1, id_receta = -1;
     private TextView h1;
     private ImageButton im1, im2, im3, im4, im5;
+    private Button list;
 
 
     FavoritoResponse fav = new FavoritoResponse();
@@ -46,6 +48,8 @@ public class Vistareceta extends AppCompatActivity {
         im3 = findViewById(R.id.startres);
         im4 = findViewById(R.id.starcuatro);
         im5 = findViewById(R.id.starcinco);
+
+        list = findViewById(R.id.addToListButton);
 
         Intent intento = getIntent();
         id_receta = intento.getIntExtra("id_receta", -1);
@@ -124,6 +128,13 @@ public class Vistareceta extends AppCompatActivity {
             TextView authorDescription = findViewById(R.id.authorDescription);
             authorDescription.setText("de " + receta.getUsuarios().getNombre());
 
+            list.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    addList(id_usuario, id_receta);
+                }
+            });
+
 
             ImageView img = findViewById(R.id.image);
             String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/" + receta.getImg();
@@ -152,6 +163,29 @@ public class Vistareceta extends AppCompatActivity {
                 PasosView.setTextColor(Color.BLACK);
                 PasosView.setTextSize(16f);
                 pasosContainer.addView(PasosView);
+            }
+        });
+    }
+
+    public void addList(int id_usuario, int id_receta){
+        Map<String, Object> request = new HashMap<>();
+        request.put("id_usuario", id_usuario);
+        request.put("id_receta", id_receta);
+        Call<Map<String, Object>> call = apiService.anadirlista(request);
+
+        call.enqueue(new Callback<Map<String, Object>>() {
+            @Override
+            public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
+                if(response.isSuccessful()){
+                    Toast.makeText(Vistareceta.this, "Lista añadida con exito", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Map<String, Object>> call, Throwable t) {
+                Toast.makeText(Vistareceta.this, "Error dentro del guardado", Toast.LENGTH_SHORT).show();
             }
         });
     }
