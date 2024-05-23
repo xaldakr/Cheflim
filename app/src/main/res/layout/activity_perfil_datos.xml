@@ -66,7 +66,8 @@
                     android:contentDescription="@string/default_content"
                     android:padding="0dp"
                     android:src="@drawable/misrecetas"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:onClick="IngresarPerRecetadelPerDatos"/>
                 <ImageButton
                     android:id="@+id/Favoritospd"
                     android:layout_width="0dp"
@@ -76,7 +77,8 @@
                     android:contentDescription="@string/default_content"
                     android:padding="0dp"
                     android:src="@drawable/favoritos"
-                    android:scaleType="fitCenter"/>
+                    android:scaleType="fitCenter"
+                    android:onClick="IngresarPerFavdelPerDatos"/>
                 <ImageButton
                     android:id="@+id/Misdatospd"
                     android:layout_width="0dp"
@@ -168,7 +170,8 @@
                     android:text="Editar Datos"
                     android:textSize="24sp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"/>
+                    android:layout_marginEnd="30dp"
+                    android:onClick="SubmitEditarUsu"/>
                 <Button
                     android:id="@+id/submitpass"
                     android:layout_width="match_parent"
@@ -180,7 +183,8 @@
                     android:text="Cambiar Contraseña"
                     android:textSize="24sp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"/>
+                    android:layout_marginEnd="30dp"
+                    android:onClick="ActualizarPass"/>
                 <EditText
                     android:id="@+id/datapass"
                     android:layout_width="match_parent"
@@ -192,6 +196,18 @@
                     android:hint="Editar Contraseña"
                     android:textAlignment="center"
                     android:layout_marginBottom="10dp"/>
+                <Button
+                    android:id="@+id/closesession"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/red"
+                    android:text="Cerrar Sesión"
+                    android:textSize="24sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"/>
 
             </LinearLayout>
         </ScrollView>
@@ -209,7 +225,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/inicio_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarIniciodelPerDatos"/>
         <ImageButton
             android:id="@+id/MenuLista"
             android:layout_width="0dp"
@@ -218,7 +235,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/lista_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarListadelPerDatos"/>
         <ImageButton
             android:id="@+id/MenuDescubre"
             android:layout_width="0dp"
@@ -227,7 +245,8 @@
             android:scaleType="fitCenter"
             android:src="@drawable/descubre_def"
             android:contentDescription="@string/default_content"
-            android:background="@drawable/pmenubutton"/>
+            android:background="@drawable/pmenubutton"
+            android:onClick="IngresarDescubredelPerDatos"/>
         <ImageButton
             android:id="@+id/MenuPerfil"
             android:layout_width="0dp"

@@ -1,7 +1,9 @@
 package sv.edu.catolica.cheflim;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -102,7 +105,7 @@ public class PerfilRecetas extends AppCompatActivity {
             delerecipe.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DeleteReceta(receta.getId_receta());
+                    DeleteReceta(receta.getId_receta(), receta.getDescripcion());
                 }
             });
             li.addView(cardView);
@@ -120,8 +123,56 @@ public class PerfilRecetas extends AppCompatActivity {
         }
     }
 
-    private void DeleteReceta(int idReceta){
+    private void DeleteReceta(int idReceta, String nombrereceta){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmar eliminación");
+        builder.setCancelable(false);
+        builder.setMessage("Desea eliminar la receta \"" + nombrereceta+"\"?");
+        builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Call<Map<String,Object>> call = apiService.eliminarfile(idReceta);
+                call.enqueue(new Callback<Map<String, Object>>() {
+                    @Override
+                    public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
+                        //En realidad no hariamos nada pq la imagen es independiente
+                    }
 
+                    @Override
+                    public void onFailure(Call<Map<String, Object>> call, Throwable t) {
+                        //Same goes here
+                    }
+                });
+                Call<Map<String, Object>> call1 = apiService.eliminarreceta(idReceta);
+                call1.enqueue(new Callback<Map<String, Object>>() {
+                    @Override
+                    public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
+                        if(response.isSuccessful()){
+                            SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
+                            CargarDatos(sharedPreferences.getInt("id_usuario", -1));
+                            Toast.makeText(PerfilRecetas.this, "Receta eliminada correctamente", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            Toast.makeText(PerfilRecetas.this, "Error al eliminar la receta", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<Map<String, Object>> call, Throwable t) {
+                        Toast.makeText(PerfilRecetas.this, "Error de conexion", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create();
+        builder.show();
     }
     public void IngresarListadelPerReceta(View view) {
         Intent intento = new Intent(this, Listaingredientes.class);
@@ -140,6 +191,23 @@ public class PerfilRecetas extends AppCompatActivity {
     }
     public void IngresarDescubredelPerReceta(View view) {
         Intent intento = new Intent(this, Descubre.class);
+        startActivity(intento);
+        finish();
+    }
+
+
+    public void IngresarPerRecetadelPerReceta(View view) {
+        Intent intento = new Intent(this, PerfilRecetas.class);
+        startActivity(intento);
+        finish();
+    }
+    public void IngresarPerFavdelPerReceta(View view) {
+        Intent intento = new Intent(this, PerfilFavoritos.class);
+        startActivity(intento);
+        finish();
+    }
+    public void IngresarPerDatosdelPerReceta(View view) {
+        Intent intento = new Intent(this, PerfilDatos.class);
         startActivity(intento);
         finish();
     }

@@ -91,7 +91,7 @@ public class Descubre extends AppCompatActivity {
             Glide.with(getApplication()).load(URL_IMG).into(img);
             titleTex.setText(receta.getDescripcion());
             authorTex.setText("de " + receta.getUsuarios().getNombre());
-            descriptionTex.setText("Recetas fáciles para hacer en casa");
+            descriptionTex.setText(receta.getPorciones() + " Porciones  | " + receta.getTiempo() + " Minutos");
             ratingTex.setText(String.format("%.1f (%d Reseñas)", receta.getPromedioResenas(), receta.getCantidadResenas()));
 
             botorecipe.setOnClickListener(new View.OnClickListener() {

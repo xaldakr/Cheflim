@@ -29,11 +29,15 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
 
         apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
-
-        //Aqui se va a interrogar si ya hay una sesion activa
-
-        //Aqui se setean a null los datos de login
         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
+        //Aqui se va a interrogar si ya hay una sesion activa
+        if (sharedPreferences.getInt("id_usuario", -1) != -1){
+            Intent intentamos = new Intent(Login.this, Inicio.class);
+            startActivity(intentamos);
+            finish();
+        }
+        //Aqui se setean a null los datos de login
+
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("id_usuario", -1);
         editor.putString("usuario", "");
