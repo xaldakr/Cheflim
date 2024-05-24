@@ -36,8 +36,7 @@ public class Login extends AppCompatActivity {
             startActivity(intentamos);
             finish();
         }
-        //Aqui se setean a null los datos de login
-        Toast.makeText(this, Integer.toString(sharedPreferences.getInt("id_usuario", -2)), Toast.LENGTH_SHORT).show();
+
 
         Log = (Button) findViewById(R.id.loginButton);
         Sign = (Button) findViewById(R.id.gotosign);

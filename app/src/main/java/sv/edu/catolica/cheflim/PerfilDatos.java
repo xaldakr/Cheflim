@@ -51,6 +51,8 @@ public class PerfilDatos extends AppCompatActivity {
         ETname.setText(sharedPreferences.getString("nombre", ""));
         ETuser.setText(sharedPreferences.getString("usuario", ""));
         ETmail.setText(sharedPreferences.getString("correo", ""));
+
+        apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
     }
     private void actualizarDato(){
         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
