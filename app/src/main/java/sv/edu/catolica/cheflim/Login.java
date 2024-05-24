@@ -43,12 +43,14 @@ public class Login extends AppCompatActivity {
         Sign = (Button) findViewById(R.id.gotosign);
         Mail = (EditText) findViewById(R.id.emailEditText);
         Pass = (EditText) findViewById(R.id.passwordEditText);
+        /*
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("id_usuario", -1);
         editor.putString("usuario", "");
         editor.putString("nombre", "");
         editor.putString("correo", "");
         editor.apply();
+        */
     }
 
     public void Crearcue(View view) {
