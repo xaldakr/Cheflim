@@ -52,7 +52,11 @@ public class Descubre extends AppCompatActivity {
 
 
     }
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        CargarDatos();
+    }
     private void CargarDatos(){
         Call<List<Recetas>> call = apiService.getRecetas(textbusqueda);
         call.enqueue(new Callback<List<Recetas>>() {

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Vistareceta">
+    tools:context=".Vistareceta"
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -81,7 +82,7 @@
                     android:layout_below="@id/authorDescription"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="16dp"
-                    android:src="@drawable/imgc" />
+                    android:src="@drawable/imgtemplate" />
 
                 <!-- Sección de calificación con estrellas -->
                 <LinearLayout

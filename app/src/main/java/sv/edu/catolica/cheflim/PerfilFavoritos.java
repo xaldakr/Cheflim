@@ -49,6 +49,12 @@ public class PerfilFavoritos extends AppCompatActivity {
 
         CargarDatos(sharedPreferences.getInt("id_usuario", -1));
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
+        CargarDatos(sharedPreferences.getInt("id_usuario", -1));
+    }
     private void CargarDatos(int id_usu){
         Call<List<Recetas>> call = apiService.getFavRecetas(id_usu);
         call.enqueue(new Callback<List<Recetas>>() {
