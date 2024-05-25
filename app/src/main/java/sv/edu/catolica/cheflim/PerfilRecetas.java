@@ -87,6 +87,7 @@ public class PerfilRecetas extends AppCompatActivity {
 
             ImageButton botorecipe = (ImageButton) cardView.findViewById(R.id.see_recipe);
             ImageButton delerecipe = (ImageButton) cardView.findViewById(R.id.delete_recipe);
+            ImageButton editrecipe = (ImageButton) cardView.findViewById(R.id.edit_recipe);
 
             String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/"+ receta.getImg();
 
@@ -99,6 +100,13 @@ public class PerfilRecetas extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MostrarReceta(receta.getId_receta(), sharedPreferences.getInt("id_usuario", -1)); //Quitar el hardcoded
+                }
+            });
+
+            editrecipe.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EditarReceta(receta.getId_receta());
                 }
             });
 
@@ -121,6 +129,12 @@ public class PerfilRecetas extends AppCompatActivity {
         } else {
             Toast.makeText(PerfilRecetas.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
         }
+    }
+
+    private void EditarReceta(int id_receta){
+        Intent intentocosa = new Intent(PerfilRecetas.this, CrudRecetas.class);
+        intentocosa.putExtra("id_receta", id_receta);
+        startActivity(intentocosa);
     }
 
     private void DeleteReceta(int idReceta, String nombrereceta){
