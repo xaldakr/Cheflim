@@ -58,7 +58,7 @@
             android:layout_weight="1"
             android:layout_height="100dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/inicio_sel"
+            android:src="@drawable/inicio_def"
             android:contentDescription="@string/default_content"
             android:background="@drawable/pmenubutton"
             android:onClick="IngresarIniciodelInicio"/>
@@ -68,7 +68,7 @@
             android:layout_weight="1"
             android:layout_height="100dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/lista_def"
+            android:src="@drawable/lista_sel"
             android:contentDescription="@string/default_content"
             android:background="@drawable/pmenubutton"
             android:onClick="IngresarListadelInicio"/>
