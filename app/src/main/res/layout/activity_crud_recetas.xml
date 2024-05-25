@@ -359,6 +359,7 @@
                     android:backgroundTint="@color/red"
                     android:layout_margin="16dp"
                     android:text="Guardar Receta"
+                    android:textColor="@color/black"
                     android:textSize="24sp"
                     android:onClick="GuarEdit"/>
             </LinearLayout>
