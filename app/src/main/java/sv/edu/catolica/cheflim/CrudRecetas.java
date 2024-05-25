@@ -556,7 +556,7 @@ public class CrudRecetas extends AppCompatActivity {
                     int idrec = (int) responseBody.get("id_receta");
                     Guardarimg(idrec);
                 }else {
-                    Toast.makeText(CrudRecetas.this, "Error al subir la receta", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, "Error al subir la imagen", Toast.LENGTH_SHORT).show();
                 }
             }
 
