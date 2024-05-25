@@ -211,4 +211,10 @@ public class PerfilRecetas extends AppCompatActivity {
         startActivity(intento);
         finish();
     }
+    public void AgregarReceta(View view) {
+
+        Intent intentocosa = new Intent(this, CrudRecetas.class);
+        startActivity(intentocosa);
+
+    }
 }

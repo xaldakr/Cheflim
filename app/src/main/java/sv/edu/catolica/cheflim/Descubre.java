@@ -30,6 +30,7 @@ public class Descubre extends AppCompatActivity {
     private TextView titleTex, authorTex, descriptionTex,ratingTex;
     private ImageView img;
     private LinearLayout li;
+    private ImageButton img2;
 
     private String textbusqueda;
     @Override
@@ -48,6 +49,8 @@ public class Descubre extends AppCompatActivity {
 
         apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
         CargarDatos();
+
+
     }
 
     private void CargarDatos(){
@@ -100,6 +103,14 @@ public class Descubre extends AppCompatActivity {
                     MostrarReceta(receta.getId_receta(), sharedPreferences.getInt("id_usuario", -1)); //Quitar el hardcoded
                 }
             });
+            img2 = findViewById(R.id.MenuLista);
+
+            img2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    IngresarListadelInicio( sharedPreferences.getInt("id_usuario", -1));
+                }
+            });
 
             li.addView(cardView);
         }
@@ -115,8 +126,10 @@ public class Descubre extends AppCompatActivity {
             Toast.makeText(Descubre.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
         }
     }
-    public void IngresarListadelDescubre(View view) {
+    public void IngresarListadelInicio(int id_usuario) {
         Intent intento = new Intent(this, Listaingredientes.class);
+
+        intento.putExtra("id_usuario", id_usuario);
         startActivity(intento);
         finish();
     }

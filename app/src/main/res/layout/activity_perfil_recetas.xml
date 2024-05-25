@@ -117,6 +117,7 @@
                 android:contentDescription="@string/default_content"
                 android:src="@drawable/add"
                 android:scaleType="centerInside"
+                android:onClick="AgregarReceta"
                 />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

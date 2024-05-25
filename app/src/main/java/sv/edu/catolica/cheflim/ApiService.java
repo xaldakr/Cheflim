@@ -58,15 +58,18 @@ public interface ApiService {
     Call<List<Recetas>> getFavRecetas(@Path("id") int id);
 
     @GET("obtenerlista/{id}")
-    Call<Lista> checkList(@Path("id") int idReceta);
+    Call<List<Lista>> checkList(@Path("id") int idReceta);
 
     @POST("anadirlista")
     Call<Map<String, Object>> anadirlista(@Body Map<String, Object> request);
 
     //API IMAGENES
-    @DELETE("deletereceta/:id")
+    @DELETE("deletereceta/{id}")
     Call<Map<String,Object>> eliminarreceta(@Path("id") int id);
     @DELETE("borrarArchivo/{idReceta}")
     Call<Map<String, Object>> eliminarfile(@Path("idReceta") int id);
+
+    @DELETE("eliminaritem/{id}")
+    Call<Map<String,Object>> eliminarlista(@Path("id") int id);
 
 }

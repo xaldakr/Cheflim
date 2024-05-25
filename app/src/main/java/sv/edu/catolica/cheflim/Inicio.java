@@ -27,27 +27,38 @@ import retrofit2.Response;
 public class Inicio extends AppCompatActivity {
 
     private LinearLayout li;
-    private TextView titleTex, authorTex, descriptionTex,ratingTex;
+    private TextView titleTex, authorTex, descriptionTex, ratingTex;
 
     private TextView datouser;
     private ImageView img;
 
-
+    private ImageButton img2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
+
+        li = findViewById(R.id.linear_layout_container);
+        datouser = findViewById(R.id.InicioNameuser);
+        img2 = findViewById(R.id.MenuLista);
+
         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
+        datouser.setText(sharedPreferences.getString("usuario", ""));
+
         // Aqui comprobariamos si existe el usuario
         if (sharedPreferences.getInt("id_usuario", -1) == -1){
             finish();
         }
-        li = findViewById(R.id.linear_layout_container);
+    }
 
-        datouser = (TextView) findViewById(R.id.InicioNameuser);
+    @Override
+    protected void onResume() {
+        super.onResume();
+        actualizarRecetas();
+    }
 
-        datouser.setText(sharedPreferences.getString("usuario", ""));
+    private void actualizarRecetas() {
         ApiService apiService = ApiClient.getRetrofitInstance().create(ApiService.class);
         Call<List<Recetas>> call = apiService.getRecetas();
         call.enqueue(new Callback<List<Recetas>>() {
@@ -67,9 +78,10 @@ public class Inicio extends AppCompatActivity {
                 Log.e("Inicio", "Error: " + t.getMessage());
             }
         });
-
     }
+
     private void mostrarRecetas(List<Recetas> recetas, ApiService apiService) {
+        li.removeAllViews();
         LayoutInflater inflater = LayoutInflater.from(this);
         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
         for (Recetas receta : recetas) {
@@ -81,9 +93,9 @@ public class Inicio extends AppCompatActivity {
             descriptionTex = cardView.findViewById(R.id.description_text);
             ratingTex = cardView.findViewById(R.id.rating_text);
 
-            ImageButton botorecipe = (ImageButton) cardView.findViewById(R.id.see_recipe);
+            ImageButton botorecipe = cardView.findViewById(R.id.see_recipe);
 
-            String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/"+ receta.getImg();
+            String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/" + receta.getImg();
 
             Glide.with(getApplication()).load(URL_IMG).into(img);
             titleTex.setText(receta.getDescripcion());
@@ -97,40 +109,57 @@ public class Inicio extends AppCompatActivity {
                     MostrarReceta(receta.getId_receta(), sharedPreferences.getInt("id_usuario", -1)); //Quitar el hardcoded
                 }
             });
+            img2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    IngresarListadelInicio(receta.getId_receta(), sharedPreferences.getInt("id_usuario", -1));
+                }
+            });
 
             li.addView(cardView);
         }
     }
 
-    private void MostrarReceta(int id_receta, int id_usuario){
-        if (id_usuario >= 1){
+    private void MostrarReceta(int id_receta, int id_usuario) {
+        if (id_usuario >= 1) {
             Intent intentocosa = new Intent(Inicio.this, Vistareceta.class);
             intentocosa.putExtra("id_receta", id_receta);
             intentocosa.putExtra("id_usuario", id_usuario);
             startActivity(intentocosa);
         } else {
-            Toast.makeText(Inicio.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
+            Toast.makeText(Inicio.this, "No deberías estar aquí!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void IngresarListadelInicio(View view) {
+    public void IngresarListadelInicio(int id_receta, int id_usuario) {
         Intent intento = new Intent(this, Listaingredientes.class);
+        intento.putExtra("id_receta", id_receta);
+        intento.putExtra("id_usuario", id_usuario);
         startActivity(intento);
         finish();
     }
+
     public void IngresarIniciodelInicio(View view) {
         Intent intento = new Intent(this, Inicio.class);
         startActivity(intento);
         finish();
     }
+
     public void IngresarPerfildelInicio(View view) {
         Intent intento = new Intent(this, PerfilDatos.class);
         startActivity(intento);
         finish();
     }
+
     public void IngresarDescubredelInicio(View view) {
         Intent intento = new Intent(this, Descubre.class);
         startActivity(intento);
         finish();
+    }
+    public void AgregarReceta(View view) {
+
+            Intent intentocosa = new Intent(Inicio.this, CrudRecetas.class);
+            startActivity(intentocosa);
+
     }
 }
