@@ -621,7 +621,6 @@ public class CrudRecetas extends AppCompatActivity {
         Recetaprin.setIngredientes(ListaIngredientes);
         Recetaprin.setId_receta(-1);
         Recetaprin.setId_usuario(idusus);
-        Recetaprin.setImg("");
         Recetaprin.setVideo("");
         Recetaprin.setDescripcion(NombreRec.getText().toString().trim());
         Recetaprin.setPorciones(Integer.parseInt(Porciones.getText().toString()));
