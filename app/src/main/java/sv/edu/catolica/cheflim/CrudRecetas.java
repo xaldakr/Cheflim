@@ -553,7 +553,7 @@ public class CrudRecetas extends AppCompatActivity {
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                 Map<String, Object> responseBody = response.body();
                 if(response.isSuccessful()){
-                    int idrec = (int) responseBody.get("id_receta");
+                    int idrec = (int) ((double) responseBody.get("id_receta"));
                     Guardarimg(idrec);
                 }else {
                     Toast.makeText(CrudRecetas.this, "Error al subir la imagen", Toast.LENGTH_SHORT).show();
@@ -632,7 +632,7 @@ public class CrudRecetas extends AppCompatActivity {
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                 Map<String, Object> responseBody = response.body();
                 if(response.isSuccessful()){
-                    int idrec = (int) responseBody.get("id_receta");
+                    int idrec = (int) ((double) responseBody.get("id_receta"));
                     if(imageUri != null) {
                         Editarimg(idrec);
                     } else {
