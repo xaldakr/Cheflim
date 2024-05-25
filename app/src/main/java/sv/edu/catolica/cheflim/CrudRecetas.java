@@ -130,8 +130,8 @@ public class CrudRecetas extends AppCompatActivity {
     }
     private void CargarInfo(){
         NombreRec.setText(Recetaprin.getDescripcion());
-        Porciones.setText(Recetaprin.getPorciones());
-        TiempoDato.setText(Recetaprin.getTiempo());
+        Porciones.setText(Integer.toString(Recetaprin.getPorciones()));
+        TiempoDato.setText(Integer.toString(Recetaprin.getTiempo()));
         //Cargar la imagen
         String URL_IMG = "https://h2vr69d6-3000.use.devtunnels.ms/api/obtenerimg/" + Recetaprin.getImg();
         Glide.with(getApplicationContext()).load(URL_IMG).into(ImagenSubida);
@@ -183,7 +183,7 @@ public class CrudRecetas extends AppCompatActivity {
             datocar = cardView.findViewById(R.id.PasDatoName);
             numer = cardView.findViewById(R.id.Pasnum);
             datocar.setText(pasos.getPaso());
-            numer.setText(i+1);
+            numer.setText(Integer.toString(i+1));
             btnedit = cardView.findViewById(R.id.EditPas);
             btndelete = cardView.findViewById(R.id.DeletePas);
             btnup = cardView.findViewById(R.id.UpPas);
@@ -252,7 +252,7 @@ public class CrudRecetas extends AppCompatActivity {
         LayoutInflater inflador = LayoutInflater.from(this);
         View dialogview = inflador.inflate(R.layout.dialogseteditdata, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Agrega un ingrediente");
+        builder.setTitle("Agrega un Paso");
         builder.setView(dialogview);
         builder.setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
             @Override
