@@ -393,7 +393,7 @@ public class CrudRecetas extends AppCompatActivity {
         }
     }
     private void ChangeViews(int view){ // 1. Ingredientes, 2. Pasos, 3. Datos
-        ImgDatos.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.none));
+        ImgIngre.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.none));
         ImgPasos.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.none));
         ImgDatos.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.none));
         if (view != 1)
