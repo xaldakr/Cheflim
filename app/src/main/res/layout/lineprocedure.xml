@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/LayoutCentrapas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mustard"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/UpPas"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:backgroundTint="@color/none"
+                    android:contentDescription="@string/default_content"
+                    android:padding="0dp"
+                    android:src="@android:drawable/arrow_up_float"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/DownPas"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:backgroundTint="@color/none"
+                    android:contentDescription="@string/default_content"
+                    android:padding="0dp"
+                    android:src="@android:drawable/arrow_down_float"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/Pasnum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:text="-"
+                android:paddingStart="15dp"
+                android:layout_gravity="top"/>
+            <TextView
+                android:id="@+id/PasDatoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:text="Lorem Ipsum"
+                android:textSize="18sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/EditPas"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@android:drawable/ic_menu_edit"
+                android:padding="0dp"
+                android:backgroundTint="@color/none"
+                android:contentDescription="@string/default_content"/>
+            <ImageButton
+                android:id="@+id/DeletePas"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@android:drawable/ic_menu_delete"
+                android:padding="0dp"
+                android:backgroundTint="@color/none"
+                android:contentDescription="@string/default_content"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

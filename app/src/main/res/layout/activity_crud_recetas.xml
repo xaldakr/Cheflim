@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/olive"
     android:orientation="vertical"
-    tools:context=".Listaingredientes">
+    tools:context=".CrudRecetas">
 
     <!-- Header Layout -->
     <LinearLayout
@@ -37,7 +37,7 @@
                 android:paddingStart="5dp"
                 android:paddingBottom="24dp"
                 android:src="@drawable/back"
-
+                android:onClick="Salirdeaqui"
                 />
 
 
@@ -64,7 +64,7 @@
 
 
                 <EditText
-                    android:id="@+id/search_ingredient"
+                    android:id="@+id/NombreReceta"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="8dp"
@@ -87,7 +87,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/Misrecetaspd"
+            android:id="@+id/MisIngredientes"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -95,10 +95,11 @@
             android:contentDescription="@string/default_content"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ingredientes" />
+            android:src="@drawable/ingredientes"
+            android:onClick="CambiarIngre"/>
 
         <ImageButton
-            android:id="@+id/Favoritospd"
+            android:id="@+id/Misprocedimientos"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -106,10 +107,11 @@
             android:contentDescription="@string/default_content"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/procedimientos" />
+            android:src="@drawable/procedimientos"
+            android:onClick="CambiarProce"/>
 
         <ImageButton
-            android:id="@+id/Misdatospd"
+            android:id="@+id/MisDatos"
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:layout_weight="1"
@@ -117,7 +119,8 @@
             android:contentDescription="@string/default_content"
             android:padding="0dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/multimedia" />
+            android:src="@drawable/multimedia"
+            android:onClick="CambiarDato"/>
     </LinearLayout>
 
 
@@ -156,7 +159,8 @@
                 android:contentDescription="@string/default_content"
                 android:padding="0dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/add" />
+                android:src="@drawable/add"
+                android:onClick="AddIng"/>
         </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
@@ -208,7 +212,8 @@
                 android:contentDescription="@string/default_content"
                 android:padding="0dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/add" />
+                android:src="@drawable/add"
+                android:onClick="AddPas"/>
         </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
@@ -284,7 +289,8 @@
                             android:padding="0dp"
                             android:layout_marginEnd="45dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/upload" />
+                            android:src="@drawable/upload"
+                            android:onClick="Upimage"/>
 
                     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -307,7 +313,8 @@
                     android:textSize="20sp"
                     android:hint="#"
                     android:textAlignment="center"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:digits="0123456789" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -331,7 +338,8 @@
                         android:hint="#"
                         android:textAlignment="textEnd"
                         android:textSize="20sp"
-                        android:inputType="number"/>
+                        android:inputType="number"
+                        android:digits="0123456789" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -349,7 +357,8 @@
                     android:backgroundTint="@color/red"
                     android:layout_margin="16dp"
                     android:text="Guardar Receta"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:onClick="GuarEdit"/>
             </LinearLayout>
         </ScrollView>
 
