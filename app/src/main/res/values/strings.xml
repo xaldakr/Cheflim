@@ -1,4 +1,32 @@
 <resources>
     <string name="app_name">Cheflim</string>
     <string name="default_content">.</string>
+    <string name="lista_compras">Mi Lista de compras</string>
+    <string name="bienvenido">Bienvenid@</string>
+    <string name="buscar_receta">Buscar Receta</string>
+    <string name="nombre_real">Nombre Real:</string>
+    <string name="nombre_de_usuario">Nombre de Usuario:</string>
+    <string name="correo">Correo:</string>
+    <string name="editar_datos">Editar Datos</string>
+    <string name="cambiar_contrase_a">Cambiar Contraseña</string>
+    <string name="editar_contrase_a">Editar Contraseña</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="correo_crear">Correo</string>
+    <string name="nombre_completo_crear">Nombre Completo</string>
+    <string name="nombre_de_usuario_crear">Nombre de Usuario</string>
+    <string name="contrase_crear">Contraseña</string>
+    <string name="repita_su_contrase_crear">Repita su Contraseña</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="porciones">porciones</string>
+    <string name="mins">mins</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="instrucciones">Instrucciones:</string>
+    <string name="contrase_inicio">Contraseña</string>
+    <string name="iniciar_sesi_n">Iniciar sesión</string>
+    <string name="no_tienes_una_cuenta">¿No tienes una cuenta?</string>
+    <string name="crea_una_cuenta">Crea una</string>
+    <string name="crear_receta">Crear Receta</string>
+    <string name="mi_nueva_receta">Mi Nueva Receta</string>
+    <string name="lista_de_ingredientes_crear">LISTA DE INGREDIENTES</string>
+    <string name="email_inicio">Correo</string>
 </resources>

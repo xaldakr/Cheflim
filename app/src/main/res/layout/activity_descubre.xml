@@ -35,7 +35,7 @@
                 android:layout_weight="1"
                 android:layout_height="50dp"
                 android:textColor="@color/black"
-                android:hint="   Buscar Receta"/>
+                android:hint="@string/buscar_receta"/>
 
             <ImageButton
                 android:id="@+id/BTBuscar"

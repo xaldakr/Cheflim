@@ -34,7 +34,7 @@
                             android:layout_height="wrap_content"
                             android:textColor="@color/white"
                             android:textSize="24sp"
-                            android:text="Bienvenid@"/>
+                            android:text="@string/bienvenido"/>
                         <TextView
                             android:id="@+id/InicioNameuser"
                             android:layout_width="match_parent"

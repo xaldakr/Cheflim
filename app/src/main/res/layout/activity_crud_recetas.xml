@@ -57,7 +57,7 @@
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crear Receta"
+                    android:text="@string/crear_receta"
                     android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -72,7 +72,7 @@
                     android:drawablePadding="8dp"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Mi Nueva Receta"
+                    android:text="@string/mi_nueva_receta"
                     android:textColor="@color/black" />
             </LinearLayout>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="LISTA DE INGREDIENTES"
+                android:text="@string/lista_de_ingredientes_crear"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />

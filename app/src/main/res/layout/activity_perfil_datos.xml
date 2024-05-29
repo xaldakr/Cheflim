@@ -102,7 +102,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Nombre Real:"
+                    android:text="@string/nombre_real"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
@@ -122,7 +122,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Nombre de Usuario:"
+                    android:text="@string/nombre_de_usuario"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
@@ -142,7 +142,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Correo:"
+                    android:text="@string/correo"
                     android:textAlignment="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="5dp"
@@ -167,7 +167,7 @@
                     android:layout_marginBottom="5dp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/red"
-                    android:text="Editar Datos"
+                    android:text="@string/editar_datos"
                     android:textSize="24sp"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
@@ -180,7 +180,7 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/red"
-                    android:text="Cambiar Contraseña"
+                    android:text="@string/cambiar_contrase_a"
                     android:textSize="22sp"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
@@ -193,7 +193,7 @@
                     android:inputType="text|textPassword"
                     android:background="@drawable/edittextredondo"
                     android:textColor="@color/black"
-                    android:hint="Editar Contraseña"
+                    android:hint="@string/editar_contrase_a"
                     android:textAlignment="center"
                     android:layout_marginBottom="10dp"/>
                 <Button
@@ -204,7 +204,7 @@
                     android:layout_marginBottom="20dp"
                     android:textColor="@color/white"
                     android:backgroundTint="@color/red"
-                    android:text="Cerrar Sesión"
+                    android:text="@string/cerrar_sesi_n"
                     android:textSize="24sp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"

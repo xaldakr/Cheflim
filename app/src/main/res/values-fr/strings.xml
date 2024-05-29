@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cheflim</string>
+    <string name="default_content">.</string>
+    <string name="lista_compras">Ma Liste de Courses</string>
+    <string name="bienvenido">Bienvenue</string>
+    <string name="buscar_receta">Rechercher Recette</string>
+    <string name="nombre_real">Nom Réel:</string>
+    <string name="nombre_de_usuario">Nom d\'utilisateur:</string>
+    <string name="correo">Courriel:</string>
+    <string name="editar_datos">Modifier les Données</string>
+    <string name="cambiar_contrase_a">Changer le Mot de Passe</string>
+    <string name="editar_contrase_a">Modifier le Mot de Passe</string>
+    <string name="cerrar_sesi_n">Déconnexion</string>
+    <string name="correo_crear">Courriel</string>
+    <string name="nombre_completo_crear">Nom Complet</string>
+    <string name="nombre_de_usuario_crear">Nom d\'utilisateur</string>
+    <string name="contrase_crear">Mot de Passe</string>
+    <string name="repita_su_contrase_crear">Répéter le Mot de Passe</string>
+    <string name="crear_cuenta">Créer un Compte</string>
+    <string name="porciones">Portions</string>
+    <string name="mins">min</string>
+    <string name="ingredientes">Ingrédients</string>
+    <string name="instrucciones">Instructions:</string>
+    <string name="contrase_inicio">Mot de Passe</string>
+    <string name="iniciar_sesi_n">Se connecter</string>
+    <string name="no_tienes_una_cuenta">Vous n\'avez pas de compte ?</string>
+    <string name="crea_una_cuenta">Créez-en une</string>
+    <string name="crear_receta">Créer une Recette</string>
+    <string name="mi_nueva_receta">Ma Nouvelle Recette</string>
+    <string name="lista_de_ingredientes_crear">LISTE DES INGRÉDIENTS</string>
+    <string name="email_inicio">Courriel</string>
+</resources>

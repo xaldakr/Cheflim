@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cheflim</string>
+    <string name="default_content">.</string>
+    <string name="lista_compras">My Shopping List</string>
+    <string name="bienvenido">Welcome</string>
+    <string name="buscar_receta">Search Recipe</string>
+    <string name="nombre_real">Real Name:</string>
+    <string name="nombre_de_usuario">Username:</string>
+    <string name="correo">Email:</string>
+    <string name="editar_datos">Edit Data</string>
+    <string name="cambiar_contrase_a">Change Password</string>
+    <string name="editar_contrase_a">Edit Password</string>
+    <string name="cerrar_sesi_n">Log Out</string>
+    <string name="correo_crear">Email</string>
+    <string name="nombre_completo_crear">Full Name</string>
+    <string name="nombre_de_usuario_crear">User Name</string>
+    <string name="contrase_crear">Password</string>
+    <string name="repita_su_contrase_crear">Repeat Password</string>
+    <string name="crear_cuenta">Create Account</string>
+    <string name="porciones">Servings</string>
+    <string name="mins">mins</string>
+    <string name="ingredientes">Ingredients</string>
+    <string name="instrucciones">Instructions:</string>
+    <string name="contrase_inicio">Password</string>
+    <string name="iniciar_sesi_n">Log in</string>
+    <string name="no_tienes_una_cuenta">Don\'t have an account?</string>
+    <string name="crea_una_cuenta">Create one</string>
+    <string name="crear_receta">Create Recipe</string>
+    <string name="mi_nueva_receta">My New Recipe</string>
+    <string name="lista_de_ingredientes_crear">INGREDIENTS LIST</string>
+    <string name="email_inicio">Email</string>
+</resources>
