@@ -69,7 +69,8 @@ public class Inicio extends AppCompatActivity {
                     mostrarRecetas(recetas, apiService);
                 } else {
                     // Manejar el caso en que la respuesta no es exitosa
-                    Log.e("Inicio", "Respuesta fallida: " + response.errorBody());
+                    Toast.makeText(Inicio.this, getString(R.string.respuesta_fallida) + ": " + response.errorBody(), Toast.LENGTH_SHORT).show();
+
                 }
             }
 

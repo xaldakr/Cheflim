@@ -92,11 +92,12 @@ public class Listaingredientes extends AppCompatActivity {
 
     public void eliminarlista(int id_lista){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Confirmar eliminación");
+        builder.setTitle(getString(R.string.confirmar_eliminacion));
         builder.setCancelable(false);
-        builder.setMessage("Desea eliminar este Item de lista?");
+        builder.setMessage(getString(R.string.confirmar_eliminar_item));
 
-        builder.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+
+        builder.setPositiveButton(getString(R.string.eliminar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Call<Map<String,Object>> call = apiService.eliminarlista(id_lista);
@@ -109,12 +110,13 @@ public class Listaingredientes extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                        Toast.makeText(Listaingredientes.this, "Error en la llamada a la API: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Listaingredientes.this, String.format(getString(R.string.error_llamada_api), t.getMessage()), Toast.LENGTH_LONG).show();
+
                     }
                 });
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // No hacer nada, solo cerrar el diálogo

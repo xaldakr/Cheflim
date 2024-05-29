@@ -68,9 +68,33 @@
     <string name="lista_anadida_exitosa">Lista añadida con exito</string>
     <string name="error_guardado">Error dentro del guardado</string>
     <string name="error_comunicacion_api">Error al comunicarse a la API</string>
-
-
-
+    <string name="agrega_ingrediente">Agregar un ingrediente</string>
+    <string name="boton_agregar">Agregar</string>
+    <string name="boton_cancelar">Cancelar</string>
+    <string name="titulo_agrega_paso">Agrega un Paso</string>
+    <string name="edita_ingrediente">Edita el ingrediente</string>
+    <string name="borrar_ingrediente">Borrar el ingrediente</string>
+    <string name="borrar">Borrar</string>
+    <string name="edita_el_paso">Edita el paso</string>
+    <string name="editar">Editar</string>
+    <string name="salir_editor_recetas">Salir del editor de recetas</string>
+    <string name="mensaje_salir_editor">Se perderán los datos, desea salir?</string>
+    <string name="boton_salir">Salir</string>
+    <string name="error_message">Ha ocurrido un error.</string>
+    <string name="respuesta_fallida">Respuesta fallida: </string>
+    <string name="porciones_label">Porciones</string>
+    <string name="minutos_label">Minutos</string>
+    <string name="confirmar_eliminacion">Confirmar eliminación</string>
+    <string name="confirmar_eliminar_item">¿Desea eliminar este Item de lista?</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="error_llamada_api">Error en la llamada a la API: %s</string>
+    <string name="correo_label">Correo</string>
+    <string name="contrasena_label">Contraseña</string>
+    <string name="usuario_label">Usuario</string>
+    <string name="nombre_label">Nombre</string>
+    <string name="id_usuario_key">id_usuario</string>
+    <string name="cerrar_sesion">Cerrar la sesión</string>
+    <string name="confirmar_salir_cuenta">Desea salir de esta cuenta?</string>
 
 
 

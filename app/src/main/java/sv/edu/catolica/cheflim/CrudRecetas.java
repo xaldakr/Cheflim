@@ -221,9 +221,10 @@ public class CrudRecetas extends AppCompatActivity {
         LayoutInflater inflador = LayoutInflater.from(this);
         View dialogview = inflador.inflate(R.layout.dialogseteditdata, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Agrega un ingrediente");
+        builder.setTitle(R.string.agrega_ingrediente);
         builder.setView(dialogview);
-        builder.setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.boton_agregar), new DialogInterface.OnClickListener() {
+
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
@@ -240,7 +241,8 @@ public class CrudRecetas extends AppCompatActivity {
                 }
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
+
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -252,9 +254,9 @@ public class CrudRecetas extends AppCompatActivity {
         LayoutInflater inflador = LayoutInflater.from(this);
         View dialogview = inflador.inflate(R.layout.dialogseteditdata, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Agrega un Paso");
+        builder.setTitle(getString(R.string.titulo_agrega_paso));
         builder.setView(dialogview);
-        builder.setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.boton_agregar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
@@ -272,7 +274,7 @@ public class CrudRecetas extends AppCompatActivity {
                 }
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -284,9 +286,9 @@ public class CrudRecetas extends AppCompatActivity {
         LayoutInflater inflador = LayoutInflater.from(this);
         View dialogview = inflador.inflate(R.layout.dialogseteditdata, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Edita el ingrediente");
+        builder.setTitle(getString(R.string.edita_ingrediente));
         builder.setView(dialogview);
-        builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.editar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
@@ -299,7 +301,7 @@ public class CrudRecetas extends AppCompatActivity {
                 }
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -309,15 +311,15 @@ public class CrudRecetas extends AppCompatActivity {
     }
     private void DelIng(int i){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Borrar el ingrediente");
-        builder.setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.borrar_ingrediente));
+        builder.setPositiveButton(getString(R.string.borrar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ListaIngredientes.remove(i);
                 RecargarDatos();
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -329,9 +331,9 @@ public class CrudRecetas extends AppCompatActivity {
         LayoutInflater inflador = LayoutInflater.from(this);
         View dialogview = inflador.inflate(R.layout.dialogseteditdata, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Edita el paso");
+        builder.setTitle(getString(R.string.edita_el_paso));
         builder.setView(dialogview);
-        builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(getString(R.string.editar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
@@ -344,7 +346,7 @@ public class CrudRecetas extends AppCompatActivity {
                 }
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -354,15 +356,15 @@ public class CrudRecetas extends AppCompatActivity {
     }
     private void DelPas(int i){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Borrar el ingrediente");
-        builder.setPositiveButton("Borrar", new DialogInterface.OnClickListener() {
+        builder.setTitle(getString(R.string.borrar_ingrediente));
+        builder.setPositiveButton(getString(R.string.borrar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 ListaPasos.remove(i);
                 RecargarDatos();
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
@@ -420,16 +422,16 @@ public class CrudRecetas extends AppCompatActivity {
 
     public void Salirdeaqui(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Salir del editor de recetas");
+        builder.setTitle(getString(R.string.salir_editor_recetas));
         builder.setCancelable(false);
-        builder.setMessage("Se perderán los datos, desea salir?");
-        builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+        builder.setMessage(getString(R.string.mensaje_salir_editor));
+        builder.setPositiveButton(getString(R.string.boton_salir), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

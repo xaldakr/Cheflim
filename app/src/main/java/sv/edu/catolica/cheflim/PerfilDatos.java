@@ -69,23 +69,23 @@ public class PerfilDatos extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.no_deje_campos_vacios), Toast.LENGTH_SHORT).show();
         }else {
             Map<String, Object> request = new HashMap<>();
-            request.put("correo", txtcorreo);
-            request.put("usuario", txtusu);
-            request.put("nombre", txtnombre);
+            request.put(getString(R.string.correo_label), txtcorreo);
+            request.put(getString(R.string.usuario_label), txtusu);
+            request.put(getString(R.string.nombre_label), txtnombre);
             Call<Map<String, Object>> call = apiService.editUser(id_usu,request);
             call.enqueue(new Callback<Map<String, Object>>() {
                 @Override
                 public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                     Map<String, Object> responseBody = response.body();
                     if(response.isSuccessful()){
-                        String usuario = (String) responseBody.get("usuario");
-                        String nome = (String) responseBody.get("nombre");
-                        String correo = (String) responseBody.get("correo");
+                        String usuario = (String) responseBody.get(getString(R.string.usuario_label));
+                        String nome = (String) responseBody.get(getString(R.string.nombre_label));
+                        String correo = (String) responseBody.get(getString(R.string.correo_label));
                         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("usuario", usuario);
-                        editor.putString("nombre", nome);
-                        editor.putString("correo", correo);
+                        editor.putString(getString(R.string.usuario_label), usuario);
+                        editor.putString(getString(R.string.nombre_label), nome);
+                        editor.putString(getString(R.string.correo_label), correo);
                         editor.apply();
                         actualizarDato();
                         Toast.makeText(PerfilDatos.this, getString(R.string.datos_editados_exito), Toast.LENGTH_SHORT).show();
@@ -110,7 +110,7 @@ public class PerfilDatos extends AppCompatActivity {
             Toast.makeText(this, getString(R.string.ingrese_nueva_contrasena), Toast.LENGTH_SHORT).show();
         }else {
             Map<String, Object> request = new HashMap<>();
-            request.put("contrasena", txtpass);
+            request.put(getString(R.string.contrasena_label), txtpass);
             Call<Map<String, Object>> call = apiService.changePassword(id_usu,request);
             call.enqueue(new Callback<Map<String, Object>>() {
                 @Override
@@ -135,18 +135,18 @@ public class PerfilDatos extends AppCompatActivity {
 
     public void CloseSession(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Cerrar la sesión");
+        builder.setTitle(getString(R.string.cerrar_sesion));
         builder.setCancelable(false);
-        builder.setMessage("Desea salir de esta cuenta?");
+        builder.setMessage(getString(R.string.confirmar_salir_cuenta));
         builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("id_usuario", -1);
-                editor.putString("usuario", "");
-                editor.putString("nombre", "");
-                editor.putString("correo", "");
+                editor.putInt(getString(R.string.id_usuario_key), -1);
+                editor.putString(getString(R.string.usuario_label), "");
+                editor.putString(getString(R.string.nombre_label), "");
+                editor.putString(getString(R.string.correo_label), "");
                 editor.apply();
                 Intent intento = new Intent(PerfilDatos.this, Login.class);
                 startActivity(intento);

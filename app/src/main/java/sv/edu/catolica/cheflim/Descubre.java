@@ -66,14 +66,16 @@ public class Descubre extends AppCompatActivity {
                     List<Recetas> recetas = response.body();
                     mostrarRecetas(recetas, apiService);
                 } else {
-                    // Manejar el caso en que la respuesta no es exitosa
-                    Log.e("Inicio", "Respuesta fallida: " + response.errorBody());
+                    Log.e("Inicio", "Error: " + getString(R.string.error_message));
+
+
                 }
             }
 
             @Override
             public void onFailure(Call<List<Recetas>> call, Throwable t) {
-                Log.e("Inicio", "Error: " + t.getMessage());
+                Toast.makeText(Descubre.this, "Error: " + getString(R.string.error_message), Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -98,7 +100,12 @@ public class Descubre extends AppCompatActivity {
             Glide.with(getApplication()).load(URL_IMG).into(img);
             titleTex.setText(receta.getDescripcion());
             authorTex.setText("de " + receta.getUsuarios().getNombre());
-            descriptionTex.setText(receta.getPorciones() + " Porciones  | " + receta.getTiempo() + " Minutos");
+
+            String porcionesLabel = getString(R.string.porciones_label);
+            String minutosLabel = getString(R.string.minutos_label);
+
+            descriptionTex.setText(receta.getPorciones() + " " + porcionesLabel + " | " + receta.getTiempo() + " " + minutosLabel);
+
             ratingTex.setText(String.format("%.1f (%d Reseñas)", receta.getPromedioResenas(), receta.getCantidadResenas()));
 
             botorecipe.setOnClickListener(new View.OnClickListener() {
