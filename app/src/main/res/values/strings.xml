@@ -29,4 +29,50 @@
     <string name="mi_nueva_receta">Mi Nueva Receta</string>
     <string name="lista_de_ingredientes_crear">LISTA DE INGREDIENTES</string>
     <string name="email_inicio">Correo</string>
+    <string name="mensaje_campo_vacio">No se puede dejar el campo vacío!!!</string>
+    <string name="bienvenido_mensaje">Bienvenido</string>
+    <string name="usuario_no_encontrado">Usuario no encontrado</string>
+    <string name="error_comunicacion_servidor">Error al comunicarse con el servidor</string>
+    <string name="llena_campos">Llena todos los campos!</string>
+    <string name="error_obtener_datos">Error al obtener datos</string>
+    <string name="fallo_conexion">Fallo en la conexión</string>
+    <string name="campo_vacio">No se puede dejar el campo vacío!!!</string>
+    <string name="no_puede_subir_mas">No se puede subir más</string>
+    <string name="no_puede_bajar_mas">No se puede bajar más</string>
+    <string name="valores_permitidos">Ingrese valores permitidos en los campos de Porciones y Tiempo</string>
+    <string name="valores_validos">Ingrese valores válidos</string>
+    <string name="nombre_receta_vacio">No puedes dejar en blanco el nombre de la receta</string>
+    <string name="ingrediente_vacio">Debe existir al menos un ingrediente</string>
+    <string name="paso_vacio">Debe existir al menos un paso</string>
+    <string name="subir_imagen">Suba una imagen para su receta!</string>
+    <string name="error_subir_imagen">Error al subir la imagen</string>
+    <string name="fallo_internet">Fallo de internet</string>
+    <string name="imagen_subida_exitosa">Imagen subida exitosamente</string>
+    <string name="fallo_subir_imagen">Fallo al subir la imagen</string>
+    <string name="receta_editada_exitosamente">Receta editada exitosamente</string>
+    <string name="error_subir_receta">Error al subir la receta</string>
+    <string name="no_deberias_estar_aqui">No deberías estar aquí!</string>
+    <string name="item_eliminado_correctamente">Item eliminado correctamente</string>
+    <string name="no_deje_campos_vacios">No deje campos vacíos!!!</string>
+    <string name="datos_editados_exito">Datos editados con éxito</string>
+    <string name="error_servidor">Error del servidor</string>
+    <string name="ingrese_nueva_contrasena">Ingrese su nueva contraseña!!!</string>
+    <string name="contraseña_editada_exito">Contraseña editada con éxito</string>
+    <string name="error_al_eliminar_la_receta">Error al eliminar la receta</string>
+    <string name="error_de_conexion">Error de conexión</string>
+    <string name="usuario_correo_existente">Usuario o Correo ya existentes!!!</string>
+    <string name="repita_correctamente_contrasena">Repita correctamente su contraseña!!!</string>
+    <string name="usuario_creado_correctamente">Usuario creado correctamente!!!</string>
+    <string name="error_crear_usuario">Error al crear el usuario...</string>
+    <string name="fallo_comunicarse_servidor">Fallo al comunicarse con el servidor!!!</string>
+    <string name="lista_anadida_exitosa">Lista añadida con exito</string>
+    <string name="error_guardado">Error dentro del guardado</string>
+    <string name="error_comunicacion_api">Error al comunicarse a la API</string>
+
+
+
+
+
+
+
 </resources>

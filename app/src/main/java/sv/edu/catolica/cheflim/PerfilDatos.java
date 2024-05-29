@@ -66,7 +66,7 @@ public class PerfilDatos extends AppCompatActivity {
         txtusu = ETuser.getText().toString().trim();
         txtcorreo = ETmail.getText().toString().trim();
         if(txtnombre.equals("")||txtusu.equals("")||txtcorreo.equals("")){
-            Toast.makeText(this, "No deje campos vacios!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.no_deje_campos_vacios), Toast.LENGTH_SHORT).show();
         }else {
             Map<String, Object> request = new HashMap<>();
             request.put("correo", txtcorreo);
@@ -88,15 +88,15 @@ public class PerfilDatos extends AppCompatActivity {
                         editor.putString("correo", correo);
                         editor.apply();
                         actualizarDato();
-                        Toast.makeText(PerfilDatos.this, "Datos editados con exito", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PerfilDatos.this, getString(R.string.datos_editados_exito), Toast.LENGTH_SHORT).show();
                     }else {
-                        Toast.makeText(PerfilDatos.this, "Error del servidor", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PerfilDatos.this, getString(R.string.error_servidor), Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                    Toast.makeText(PerfilDatos.this, "Fallo de conexion", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PerfilDatos.this, getString(R.string.fallo_conexion), Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -107,7 +107,7 @@ public class PerfilDatos extends AppCompatActivity {
         txtpass= ETpass.getText().toString().trim();
 
         if(txtpass.equals("")){
-            Toast.makeText(this, "Ingrese su nueva contraseña!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.ingrese_nueva_contrasena), Toast.LENGTH_SHORT).show();
         }else {
             Map<String, Object> request = new HashMap<>();
             request.put("contrasena", txtpass);
@@ -118,15 +118,16 @@ public class PerfilDatos extends AppCompatActivity {
                     Map<String, Object> responseBody = response.body();
                     if(response.isSuccessful()){
 
-                        Toast.makeText(PerfilDatos.this, "Contraseña editada con exito", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PerfilDatos.this, getString(R.string.contraseña_editada_exito), Toast.LENGTH_SHORT).show();
+
                     }else {
-                        Toast.makeText(PerfilDatos.this, "Error del servidor", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PerfilDatos.this, getString(R.string.error_servidor), Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                    Toast.makeText(PerfilDatos.this, "Fallo de conexion", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PerfilDatos.this, getString(R.string.fallo_conexion), Toast.LENGTH_SHORT).show();
                 }
             });
         }

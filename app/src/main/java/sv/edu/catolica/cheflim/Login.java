@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
         txtcorreo = Mail.getText().toString().trim();
         txtcontra = Pass.getText().toString().trim();
         if (txtcontra.equals("") || txtcorreo.equals("")){
-            Toast.makeText(Login.this, "Llena todos los campos!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Login.this, getString(R.string.llena_campos), Toast.LENGTH_SHORT).show();
             Sign.setEnabled(true);
             Log.setEnabled(true);
         } else {
@@ -90,12 +90,12 @@ public class Login extends AppCompatActivity {
                         editor.apply();
                         Sign.setEnabled(true);
                         Log.setEnabled(true);
-                        Toast.makeText(Login.this, "Bienvenido " + usuario, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, getString(R.string.bienvenido_mensaje) + " " + usuario, Toast.LENGTH_SHORT).show();
                         Intent intentomain = new Intent(Login.this, Inicio.class);
                         startActivity(intentomain);
                         finish();
                     } else {
-                        Toast.makeText(Login.this, "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, getString(R.string.usuario_no_encontrado), Toast.LENGTH_SHORT).show();
                         Sign.setEnabled(true);
                         Log.setEnabled(true);
                     }
@@ -103,7 +103,7 @@ public class Login extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                    Toast.makeText(Login.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, getString(R.string.error_comunicacion_servidor), Toast.LENGTH_SHORT).show();
                     Sign.setEnabled(true);
                     Log.setEnabled(true);
                 }

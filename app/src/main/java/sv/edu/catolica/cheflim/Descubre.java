@@ -127,7 +127,7 @@ public class Descubre extends AppCompatActivity {
             intentocosa.putExtra("id_usuario", id_usuario);
             startActivity(intentocosa);
         } else {
-            Toast.makeText(Descubre.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
+            Toast.makeText(Descubre.this, getString(R.string.no_deberias_estar_aqui), Toast.LENGTH_SHORT).show();
         }
     }
     public void IngresarListadelInicio(int id_usuario) {

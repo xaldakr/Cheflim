@@ -114,14 +114,14 @@ public class CrudRecetas extends AppCompatActivity {
                         RecargarDatos();
                         CargarInfo();
                     } else {
-                        Toast.makeText(CrudRecetas.this, "Error al obtener datos", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CrudRecetas.this, getString(R.string.error_obtener_datos), Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<Recetas> call, Throwable t) {
-                    Toast.makeText(CrudRecetas.this, "Fallo en la conexión", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.fallo_conexion), Toast.LENGTH_SHORT).show();
                     finish();
                 }
             });
@@ -229,7 +229,7 @@ public class CrudRecetas extends AppCompatActivity {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
                 String input = edit.getText().toString().trim();
                 if (input.equals("")){
-                    Toast.makeText(CrudRecetas.this, "No se puede dejar el campo vacio!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.campo_vacio), Toast.LENGTH_SHORT).show();
                 } else {
                     Ingrediente ingrediente = new Ingrediente();
                     ingrediente.setId_receta(-1);
@@ -260,7 +260,7 @@ public class CrudRecetas extends AppCompatActivity {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
                 String input = edit.getText().toString().trim();
                 if (input.equals("")){
-                    Toast.makeText(CrudRecetas.this, "No se puede dejar el campo vacio!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.mensaje_campo_vacio), Toast.LENGTH_SHORT).show();
                 } else {
                     Pasos pasos = new Pasos();
                     pasos.setId_receta(-1);
@@ -292,7 +292,7 @@ public class CrudRecetas extends AppCompatActivity {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
                 String input = edit.getText().toString().trim();
                 if (input.equals("")){
-                    Toast.makeText(CrudRecetas.this, "No se puede dejar el campo vacio!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.campo_vacio), Toast.LENGTH_SHORT).show();
                 } else {
                     ListaIngredientes.get(i).setIngrediente(input);
                     RecargarDatos();
@@ -337,7 +337,7 @@ public class CrudRecetas extends AppCompatActivity {
                 EditText edit = dialogview.findViewById(R.id.edit_text);
                 String input = edit.getText().toString().trim();
                 if (input.equals("")){
-                    Toast.makeText(CrudRecetas.this, "No se puede dejar el campo vacio!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.campo_vacio), Toast.LENGTH_SHORT).show();
                 } else {
                     ListaPasos.get(i).setPaso(input);
                     RecargarDatos();
@@ -372,7 +372,7 @@ public class CrudRecetas extends AppCompatActivity {
     }
     private void UPPAS(int i){
         if ( i <= 0){
-            Toast.makeText(this, "No se puede subir más", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_puede_subir_mas, Toast.LENGTH_SHORT).show();
         }
         else {
             Pasos pasoant = ListaPasos.get(i-1);
@@ -383,7 +383,7 @@ public class CrudRecetas extends AppCompatActivity {
     }
     private void DOWNPAS(int i){
         if ( i >= ListaPasos.size()-1){
-            Toast.makeText(this, "No se puede bajar más", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_puede_bajar_mas, Toast.LENGTH_SHORT).show();
         }
         else {
             Pasos pasoant = ListaPasos.get(i+1);
@@ -499,26 +499,26 @@ public class CrudRecetas extends AppCompatActivity {
             porciones = Integer.parseInt(Porciones.getText().toString());
             tiempo = Integer.parseInt(TiempoDato.getText().toString());
         }catch(Exception e) {
-            Toast.makeText(this, "Ingrese valores permitidos en los campos de Porciones y Tiempo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.valores_permitidos), Toast.LENGTH_SHORT).show();
             errores++;
         }
         //Lluvia de validaciones, yei
         if(porciones <= 0 || tiempo <= 0){
             if (errores ==0){
-                Toast.makeText(this, "Ingrese valores válidos", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.valores_validos), Toast.LENGTH_SHORT).show();
                 errores++;
             }
         }
         if(txtdescri.equals("")){
-            Toast.makeText(this, "No puedes dejar en blanco el nombre de la receta", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.nombre_receta_vacio), Toast.LENGTH_SHORT).show();
             errores++;
         }
         if (ListaIngredientes.size()<=0){
-            Toast.makeText(this, "Debe existir al menos un ingrediente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.ingrediente_vacio), Toast.LENGTH_SHORT).show();
             errores++;
         }
         if (ListaPasos.size()<=0){
-            Toast.makeText(this, "Debe existir al menos un paso", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.paso_vacio), Toast.LENGTH_SHORT).show();
             errores++;
         }
 
@@ -528,7 +528,7 @@ public class CrudRecetas extends AppCompatActivity {
                 if(imageUri != null){
                     Guardar();
                 } else {
-                    Toast.makeText(this, "Suba una imagen para su receta!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.subir_imagen), Toast.LENGTH_SHORT).show();
                 }
             } else {
                 Editar(id_receta);
@@ -556,13 +556,13 @@ public class CrudRecetas extends AppCompatActivity {
                     int idrec = (int) ((double) responseBody.get("id_receta"));
                     Guardarimg(idrec);
                 }else {
-                    Toast.makeText(CrudRecetas.this, "Error al subir la imagen", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.error_subir_imagen), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                Toast.makeText(CrudRecetas.this, "Fallo de internet", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CrudRecetas.this, getString(R.string.fallo_internet), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -578,15 +578,15 @@ public class CrudRecetas extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(CrudRecetas.this, "Imagen subida exitosamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.imagen_subida_exitosa), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(CrudRecetas.this, "Error al subir la imagen", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.error_subir_imagen), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(CrudRecetas.this, "Fallo al subir la imagen", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CrudRecetas.this, getString(R.string.fallo_subir_imagen), Toast.LENGTH_SHORT).show();
             }
         });
         finish();
@@ -603,15 +603,15 @@ public class CrudRecetas extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(CrudRecetas.this, "Imagen subida exitosamente", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.imagen_subida_exitosa), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(CrudRecetas.this, "Error al subir la imagen", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.error_subir_imagen), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(CrudRecetas.this, "Fallo al subir la imagen", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CrudRecetas.this, getString(R.string.fallo_subir_imagen), Toast.LENGTH_SHORT).show();
             }
         });
         finish();
@@ -635,17 +635,17 @@ public class CrudRecetas extends AppCompatActivity {
                     if(imageUri != null) {
                         Editarimg(idrec);
                     } else {
-                        Toast.makeText(CrudRecetas.this, "Receta editada exitosamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CrudRecetas.this, getString(R.string.receta_editada_exitosamente), Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 }else {
-                    Toast.makeText(CrudRecetas.this, "Error al subir la receta", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CrudRecetas.this, getString(R.string.error_subir_receta), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                Toast.makeText(CrudRecetas.this, "Fallo de internet", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CrudRecetas.this, getString(R.string.fallo_internet), Toast.LENGTH_SHORT).show();
             }
         });
     }

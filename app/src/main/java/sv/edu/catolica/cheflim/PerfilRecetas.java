@@ -132,7 +132,8 @@ public class PerfilRecetas extends AppCompatActivity {
             intentocosa.putExtra("id_usuario", id_usuario);
             startActivity(intentocosa);
         } else {
-            Toast.makeText(PerfilRecetas.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
+            Toast.makeText(PerfilRecetas.this, getString(R.string.no_deberias_estar_aqui), Toast.LENGTH_SHORT);
+
         }
     }
 
@@ -169,16 +170,17 @@ public class PerfilRecetas extends AppCompatActivity {
                         if(response.isSuccessful()){
                             SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
                             CargarDatos(sharedPreferences.getInt("id_usuario", -1));
-                            Toast.makeText(PerfilRecetas.this, "Receta eliminada correctamente", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PerfilRecetas.this, getString(R.string.item_eliminado_correctamente), Toast.LENGTH_SHORT).show();
 
                         } else {
-                            Toast.makeText(PerfilRecetas.this, "Error al eliminar la receta", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PerfilRecetas.this, getString(R.string.error_al_eliminar_la_receta), Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
                     public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                        Toast.makeText(PerfilRecetas.this, "Error de conexion", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PerfilRecetas.this, getString(R.string.error_de_conexion), Toast.LENGTH_SHORT).show();
+
                     }
                 });
             }

@@ -52,7 +52,7 @@ public class Signup extends AppCompatActivity {
 
         //Validamos que todo este en regla
         if (txtcorreo.equals("") || txtnombre.equals("") || txtnick.equals("") || txtcontra.equals("") || txtcontrarep.equals("")){
-            Toast.makeText(Signup.this, "Llena todos los campos!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Signup.this, getString(R.string.llena_campos), Toast.LENGTH_SHORT).show();
             Sign.setEnabled(true);
             Retu.setEnabled(true);
         } else {
@@ -74,13 +74,13 @@ public class Signup extends AppCompatActivity {
                                 if(!validacion){
                                     CrearCuen();
                                 } else {
-                                    Toast.makeText(Signup.this, "Usuario o Correo ya existentes!!!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Signup.this, getString(R.string.usuario_correo_existente), Toast.LENGTH_SHORT).show();
                                     Sign.setEnabled(true);
                                     Retu.setEnabled(true);
                                 }
                             }
                         } else {
-                            Toast.makeText(Signup.this, "Error del servidor", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Signup.this, getString(R.string.error_servidor), Toast.LENGTH_SHORT).show();
                             Sign.setEnabled(true);
                             Retu.setEnabled(true);
                         }
@@ -88,13 +88,13 @@ public class Signup extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                        Toast.makeText(Signup.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Signup.this, getString(R.string.error_comunicacion_servidor), Toast.LENGTH_SHORT).show();
                         Sign.setEnabled(true);
                         Retu.setEnabled(true);
                     }
                 });
             } else {
-                Toast.makeText(Signup.this, "Repita correctamente su contraseña!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Signup.this, getString(R.string.repita_correctamente_contrasena), Toast.LENGTH_SHORT).show();
                 Sign.setEnabled(true);
                 Retu.setEnabled(true);
             }
@@ -112,7 +112,7 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(Signup.this, "Usuario creado correctamente!!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Signup.this, getString(R.string.usuario_creado_correctamente), Toast.LENGTH_SHORT).show();
                     Sign.setEnabled(true);
                     Retu.setEnabled(true);
                     txtcorreo = "";
@@ -122,7 +122,7 @@ public class Signup extends AppCompatActivity {
                     txtcontrarep = "";
                     finish();
                 } else {
-                    Toast.makeText(Signup.this, "Error al crear el usuario...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Signup.this, getString(R.string.error_crear_usuario), Toast.LENGTH_SHORT).show();
                     Sign.setEnabled(true);
                     Retu.setEnabled(true);
                 }
@@ -130,7 +130,7 @@ public class Signup extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                Toast.makeText(Signup.this, "Fallo al comunicarse con el servidor!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Signup.this, getString(R.string.fallo_comunicarse_servidor), Toast.LENGTH_SHORT).show();
                 Sign.setEnabled(true);
                 Retu.setEnabled(true);
             }

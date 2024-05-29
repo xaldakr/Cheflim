@@ -103,7 +103,7 @@ public class Listaingredientes extends AppCompatActivity {
                 call.enqueue(new Callback<Map<String, Object>>() {
                     @Override
                     public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
-                        Toast.makeText(Listaingredientes.this, "Item eliminado correctamente", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Listaingredientes.this, getString(R.string.item_eliminado_correctamente), Toast.LENGTH_LONG).show();
                         obtenerLista();
                     }
 

@@ -70,13 +70,13 @@ public class Vistareceta extends AppCompatActivity {
                     defaulresena(response.body());
                     //primervalor(response.body());
                 } else {
-                    Toast.makeText(Vistareceta.this, "Error al obtener datos", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, getString(R.string.error_obtener_datos), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Recetas> call, Throwable t) {
-                Toast.makeText(Vistareceta.this, "Fallo en la conexión", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Vistareceta.this, getString(R.string.fallo_conexion), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -97,13 +97,13 @@ public class Vistareceta extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    Toast.makeText(Vistareceta.this, "Error al obtener datos: " + response.code(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(Vistareceta.this, getString(R.string.error_obtener_datos) + ": " + response.code(), Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<FavoritoResponse> call, Throwable t) {
-                Toast.makeText(Vistareceta.this, "Fallo en la conexión", Toast.LENGTH_LONG).show();
+                Toast.makeText(Vistareceta.this, getString(R.string.fallo_conexion), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -177,15 +177,15 @@ public class Vistareceta extends AppCompatActivity {
             @Override
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(Vistareceta.this, "Lista añadida con exito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, getString(R.string.lista_anadida_exitosa), Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, R.string.error_comunicacion_servidor, Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                Toast.makeText(Vistareceta.this, "Error dentro del guardado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Vistareceta.this, R.string.error_guardado, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -211,14 +211,14 @@ public class Vistareceta extends AppCompatActivity {
                         bookmarkIcon.setImageResource(R.drawable.bookmark);
                     }else { bookmarkIcon.setImageResource(R.drawable.bookmark_selected);}
                 }else{
-                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, R.string.error_servidor, Toast.LENGTH_SHORT).show();
                 }
 
             }
 
             @Override
             public void onFailure(Call<Map<String, Object>> call, Throwable t) {
-                Toast.makeText(Vistareceta.this, "Error al comunicarse a la api", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Vistareceta.this, R.string.error_comunicacion_api, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -297,7 +297,7 @@ public class Vistareceta extends AppCompatActivity {
                 if (response.isSuccessful()){
                     newresena(1);
                 }else{
-                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, R.string.error_comunicacion_servidor, Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -320,7 +320,7 @@ public class Vistareceta extends AppCompatActivity {
                 if (response.isSuccessful()){
                     newresena(2);
                 }else{
-                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, R.string.error_comunicacion_servidor, Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -343,7 +343,7 @@ public class Vistareceta extends AppCompatActivity {
                 if (response.isSuccessful()){
                     newresena(3);
                 }else{
-                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, R.string.error_comunicacion_servidor, Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -366,7 +366,7 @@ public class Vistareceta extends AppCompatActivity {
                 if (response.isSuccessful()){
                     newresena(4);
                 }else{
-                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, R.string.error_comunicacion_servidor, Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
@@ -389,7 +389,7 @@ public class Vistareceta extends AppCompatActivity {
                 if (response.isSuccessful()){
                     newresena(5);
                 }else{
-                    Toast.makeText(Vistareceta.this, "Error al comunicarse con el servidor", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Vistareceta.this, R.string.error_comunicacion_servidor, Toast.LENGTH_SHORT).show();
                 }
             }
             @Override

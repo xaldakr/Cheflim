@@ -117,7 +117,7 @@ public class PerfilFavoritos extends AppCompatActivity {
             intentocosa.putExtra("id_usuario", id_usuario);
             startActivity(intentocosa);
         } else {
-            Toast.makeText(PerfilFavoritos.this, "No deberias estar aqui!", Toast.LENGTH_SHORT);
+            Toast.makeText(PerfilFavoritos.this, getString(R.string.no_deberias_estar_aqui), Toast.LENGTH_SHORT);
         }
     }
 
