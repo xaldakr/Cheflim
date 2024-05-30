@@ -103,4 +103,5 @@
     <string name="tiempo_de_preparaci_n">Preparation time</string>
     <string name="guardar_receta">Save Recipe</string>
     <string name="res">Review</string>
+    <string name="ingrese_el_text">Enter the text</string>
 </resources>

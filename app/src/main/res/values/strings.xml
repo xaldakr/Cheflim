@@ -102,6 +102,7 @@
     <string name="tiempo_de_preparaci_n">Tiempo de preparación</string>
     <string name="guardar_receta">Guardar Receta</string>
     <string name="res">Reseña</string>
+    <string name="ingrese_el_text">Ingrese el texto</string>
 
 
 </resources>

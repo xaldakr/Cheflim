@@ -103,4 +103,5 @@
     <string name="tiempo_de_preparaci_n">Temps de préparation</string>
     <string name="guardar_receta">Sauvegarder la recette</string>
     <string name="res">examen</string>
+    <string name="ingrese_el_text">Entrez le texte</string>
 </resources>

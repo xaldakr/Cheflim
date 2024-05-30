@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edittextredondo"
-        android:hint="Ingrese el texto"
+        android:hint="@string/ingrese_el_text"
         android:textColor="@color/black"
         tools:ignore="TouchTargetSizeCheck" />
 </LinearLayout>
