@@ -135,10 +135,11 @@ public class PerfilDatos extends AppCompatActivity {
 
     public void CloseSession(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Cerrar la sesión");
+        builder.setTitle(getString(R.string.cerrar_sesion));
         builder.setCancelable(false);
-        builder.setMessage("Desea salir de esta cuenta?");
-        builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
+        builder.setMessage(getString(R.string.mensaje_salir_editor));
+
+        builder.setPositiveButton(getString(R.string.boton_salir), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
@@ -153,7 +154,7 @@ public class PerfilDatos extends AppCompatActivity {
                 finish();
             }
         });
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(getString(R.string.boton_cancelar), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
