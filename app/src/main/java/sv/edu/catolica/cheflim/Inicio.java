@@ -46,7 +46,7 @@ public class Inicio extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
         datouser.setText(sharedPreferences.getString("usuario", ""));
 
-        // Aqui comprobariamos si existe el usuario
+        
         if (sharedPreferences.getInt("id_usuario", -1) == -1){
             finish();
         }
