@@ -101,8 +101,8 @@ public class Inicio extends AppCompatActivity {
             Glide.with(getApplication()).load(URL_IMG).into(img);
             titleTex.setText(receta.getDescripcion());
             authorTex.setText("de " + receta.getUsuarios().getNombre());
-            descriptionTex.setText(receta.getPorciones() + " Porciones  | " + receta.getTiempo() + " Minutos");
-            ratingTex.setText(String.format("%.1f (%d Reseñas)", receta.getPromedioResenas(), receta.getCantidadResenas()));
+            descriptionTex.setText(receta.getPorciones() +" "+ getString(R.string.porciones)+" | " + receta.getTiempo() + " "+getString(R.string.mins));
+            ratingTex.setText(String.format("%.1f (%d %s)", receta.getPromedioResenas(), receta.getCantidadResenas(), getString(R.string.res)));
 
             botorecipe.setOnClickListener(new View.OnClickListener() {
                 @Override

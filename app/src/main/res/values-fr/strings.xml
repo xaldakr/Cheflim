@@ -96,4 +96,11 @@
     <string name="id_usuario_key">id_utilisateur</string>
     <string name="cerrar_sesion">Déconnexion</string>
     <string name="confirmar_salir_cuenta">Voulez-vous vous déconnecter de ce compte ?</string>
+    <string name="agregar_a_la_lista">ajouter à la liste</string>
+    <string name="lista_de_pasos">LISTE DES ÉTAPES</string>
+    <string name="imagen_de_la_receta">Image de la recette</string>
+    <string name="cantidad_de_porciones">Nombre de portions</string>
+    <string name="tiempo_de_preparaci_n">Temps de préparation</string>
+    <string name="guardar_receta">Sauvegarder la recette</string>
+    <string name="res">examen</string>
 </resources>

@@ -118,11 +118,11 @@ public class Vistareceta extends AppCompatActivity {
 
 
             TextView portions = findViewById(R.id.portions);
-            portions.setText(receta.getPorciones() + " porciones");
+            portions.setText(receta.getPorciones() +" " +getString(R.string.porciones));
 
 
             TextView time = findViewById(R.id.time);
-            time.setText(receta.getTiempo() + " minutos");
+            time.setText(receta.getTiempo() +" "+ getString(R.string.mins));
 
 
             TextView authorDescription = findViewById(R.id.authorDescription);

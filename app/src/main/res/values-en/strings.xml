@@ -96,4 +96,11 @@
     <string name="id_usuario_key">user_id</string>
     <string name="cerrar_sesion">Log out</string>
     <string name="confirmar_salir_cuenta">Do you want to sign out of this account?</string>
+    <string name="agregar_a_la_lista">Add to list</string>
+    <string name="lista_de_pasos">LIST OF STEPS</string>
+    <string name="imagen_de_la_receta">Recipe Image</string>
+    <string name="cantidad_de_porciones">Number of Servings</string>
+    <string name="tiempo_de_preparaci_n">Preparation time</string>
+    <string name="guardar_receta">Save Recipe</string>
+    <string name="res">Review</string>
 </resources>

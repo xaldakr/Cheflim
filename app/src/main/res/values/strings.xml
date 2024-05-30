@@ -95,8 +95,13 @@
     <string name="id_usuario_key">id_usuario</string>
     <string name="cerrar_sesion">Cerrar la sesión</string>
     <string name="confirmar_salir_cuenta">Desea salir de esta cuenta?</string>
-
-
+    <string name="agregar_a_la_lista">Agregar a la lista</string>
+    <string name="lista_de_pasos">LISTA DE PASOS</string>
+    <string name="imagen_de_la_receta">Imagen de la receta</string>
+    <string name="cantidad_de_porciones">Cantidad de Porciones</string>
+    <string name="tiempo_de_preparaci_n">Tiempo de preparación</string>
+    <string name="guardar_receta">Guardar Receta</string>
+    <string name="res">Reseña</string>
 
 
 </resources>
