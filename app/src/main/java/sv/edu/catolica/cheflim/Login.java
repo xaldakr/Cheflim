@@ -68,25 +68,25 @@ public class Login extends AppCompatActivity {
             Log.setEnabled(true);
         } else {
             Map<String, Object> request = new HashMap<>();
-            request.put(getString(R.string.correo_label), txtcorreo);
-            request.put(getString(R.string.contrasena_label), txtcontra);
+            request.put("correo", txtcorreo);
+            request.put("contrasena", txtcontra);
             Call<Map<String, Object>> call = apiService.login(request);
             call.enqueue(new Callback<Map<String, Object>>() {
                 @Override
                 public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                     Map<String, Object> responseBody = response.body();
                     if(response.isSuccessful()){
-                        String usuario = (String) responseBody.get(getString(R.string.usuario_label));
-                        String nome = (String) responseBody.get(getString(R.string.nombre_label));
-                        String correo = (String) responseBody.get(getString(R.string.correo_label));
+                        String usuario = (String) responseBody.get("usuario");
+                        String nome = (String) responseBody.get("nombre");
+                        String correo = (String) responseBody.get("correo");
                         //Aqui obtener los datos de login
                         int idusu = (int) ((double) responseBody.get("id_usuario"));
                         SharedPreferences sharedPreferences = getSharedPreferences("DatosLogin", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putInt(getString(R.string.id_usuario_key), idusu);
-                        editor.putString(getString(R.string.usuario_label), usuario);
-                        editor.putString(getString(R.string.nombre_label), nome);
-                        editor.putString(getString(R.string.correo_label), correo);
+                        editor.putInt("id_usuario", idusu);
+                        editor.putString("usuario", usuario);
+                        editor.putString("nombre", nome);
+                        editor.putString("correo", correo);
                         editor.apply();
                         Sign.setEnabled(true);
                         Log.setEnabled(true);
